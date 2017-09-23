@@ -98,7 +98,7 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="index.html"><img src="{{URL::asset('img/logo.png')}}" alt="" style="margin-right: 40px;"></a> 
+      <a href="index.html"><img src="{{ URL::asset('img/logo.png') }}" alt="" style="margin-right: 40px;"></a> 
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -570,7 +570,22 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
                 <td><span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
             </tr>
         </tbody>
-</table>      
+</table>
+
+
+<?php
+
+   // $db = new PDO('pgsql:host=localhost;dbname=hagane', 'juan', 'password');
+   // if(!$db){
+   //    echo "Error : Unable to open database\n";
+   // } else {
+   //    echo "Opened database successfully\n";
+   // }
+
+// foreach ($proyectos as $proyecto) {
+//     echo $proyecto->nombre;
+// }
+?>
 
 <script type="text/javascript">
   

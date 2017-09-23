@@ -46,4 +46,3 @@ Route::get('/recordatorio', function () {
 Route::get('/relacionProyectoCliente', function () {
     return view('relacionProyectoCliente');
 });
-
