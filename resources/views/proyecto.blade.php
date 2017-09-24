@@ -572,19 +572,12 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
         </tbody>
 </table>
 
-
 <?php
-
-   // $db = new PDO('pgsql:host=localhost;dbname=hagane', 'juan', 'password');
-   // if(!$db){
-   //    echo "Error : Unable to open database\n";
-   // } else {
-   //    echo "Opened database successfully\n";
-   // }
-
-// foreach ($proyectos as $proyecto) {
-//     echo $proyecto->nombre;
+// ************************CÓDIGO_BUENO*******************************************************
+// foreach ($users as $proyecto) {
+    // echo $proyecto->name;
 // }
+// ************************CÓDIGO_BUENO*******************************************************
 ?>
 
 <script type="text/javascript">

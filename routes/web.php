@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/proyecto', function () {
+Route::get('/proyecto', 'UserController@index', function () {
     return view('proyecto');
 });
 
