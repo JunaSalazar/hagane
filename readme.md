@@ -3,7 +3,7 @@
 <p align="center">
 <a href="https://www.facebook.com/haganesoftware/">
 
-	![](https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png =150x150)
+	<!-- ![](https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png =150x150) -->
 	<!-- <img src="" style="width:150px;height:150px;"> -->
 	<img src="https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png" width="150px" height="150px">
 	<img src="logoReadme.png">
