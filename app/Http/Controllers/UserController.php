@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index(){
 
-        $proyecto = DB::select('select * from proyecto where id = 1', [1]);
+        $proyecto = DB::select('select nombre from proyecto where id = 1', [1]);
 
         return view('proyecto', ['proyecto' => $proyecto]);
 
