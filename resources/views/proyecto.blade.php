@@ -521,7 +521,69 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
             </tr>
         </tfoot>
         <tbody>
-            <tr>
+
+          <?php
+
+          // nombre
+          // fechainicio
+          // fechafinal
+          // duracion
+          // cotizado
+          // entregado
+
+
+            foreach ($proyectos as $p) {
+              echo "<tr>";
+
+              echo "<td>";
+              $nombre = substr($p->nombre,1);
+              echo str_replace("}","",$nombre);
+              // echo $p->nombre;
+              echo"</td>";
+
+              echo "<td>";
+              echo $p->fechainicio;
+              echo"</td>";
+
+              echo "<td>";
+              echo $p->fechafinal;
+              echo"</td>";
+
+              echo "<td>";
+              echo $p->duracion;
+              echo"</td>";
+
+              echo "<td>";
+              $cotizado = substr($p->cotizado,1);
+              echo str_replace("}","",$cotizado);
+              // echo $p->cotizado;
+              echo"</td>";
+
+              echo "<td>";
+              $entregado = substr($p->entregado,1);
+              echo str_replace("}","",$entregado);
+              // echo $p->entregado;
+              echo"</td>";
+
+              echo "<td>";
+
+              echo "<button type='button' class='btn btn-primary gradient'  data-toggle='modal' data-target='#infoModal' data-whatever='@mdo' style='margin-bottom: 5px;'><span class = 'glyphicon glyphicon-info-sign' aria-hidden='true'></span></button>";
+
+              echo "<button type='button' class='btn btn-primary gradient' data-whatever='@mdo' style='margin-bottom: 5px;'><span class='glyphicon glyphicon-edit' aria-hidden='true'></span></button>";
+
+              echo "</td>";
+
+              echo "</tr>";
+
+            }
+
+          ?>
+
+            {{-- @foreach($proyectos as $p)
+
+            @endforeach --}}
+
+            {{-- <tr>
                 <td>Desarrollo de aplicación movil</td>
                 <td>22/07/2012</td>
                 <td>25/05/2018</td>
@@ -531,13 +593,7 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
                 <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-
-
-
-
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
+                  <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
                 </td>
             </tr>
@@ -551,8 +607,7 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
                 <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
+                  <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
                 </td>
             </tr>
             <tr>
@@ -565,9 +620,7 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
                 <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
+                  <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
               </td>
             </tr>
             <tr>
@@ -581,9 +634,7 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
 
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
+                  <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
                 </td>
             </tr>
@@ -598,20 +649,13 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
 
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
+                  <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
 
                 </td>
-            </tr>
+            </tr> --}}
         </tbody>
 </table>
-
-@foreach ($proyecto as $i) 
-          <h3>{{ $i->nombre }}</h3>
-@endforeach
 
 <?php
 
@@ -649,3 +693,6 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
 </body>
 
 </html>
+
+
+{{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}

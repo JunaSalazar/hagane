@@ -14,9 +14,9 @@ class UserController extends Controller
      */
     public function index(){
 
-        $proyecto = DB::select('select nombre from proyecto where id = 1', [1]);
+        $proyectos = DB::table('proyecto')->get();
 
-        return view('proyecto', ['proyecto' => $proyecto]);
+        return view('proyecto', ['proyectos' => $proyectos]);
 
         // ************************CÓDIGO_BUENO*******************************************************
         // $users = DB::table('users')->paginate(1);
