@@ -4,7 +4,8 @@
 <a href="https://www.facebook.com/haganesoftware/">
 
 	![](https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png =150x150)
-	<!-- <img src="https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png" style="width:150px;height:150px;"> -->
+	<!-- <img src="" style="width:150px;height:150px;"> -->
+	<img src="https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png" width="150px" height="150px">
 	<img src="logoReadme.png">
 </a>
 </p>
