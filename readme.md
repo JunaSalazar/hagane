@@ -1,13 +1,53 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<!-- <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p> -->
 
 <p align="center">
+<a href="https://www.facebook.com/haganesoftware/">
+	<img src="https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png" style="width:150px;height:150px;">
+	<img src="logoReadme.png">
+</a>
+</p>
+
+<!-- <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p> -->
+
+##Introducción
+
+**Desarrollo de sistema de control de avances de proyectos para clientes registrados en ambiente web.**
+
+Como dice el texto anterior este es un proyecto de prácticas para la empresa Hagane Software localizado en Monterrey, Nuevo León.
+- [Página en Facebook](https://www.facebook.com/haganesoftware/).
+
+Este es un sistema desarrollado en ambiente web el control de avances de proyectos para clientes, en el que este le permitirá administrar la información como:para solucionar el problema de organización de elementos en la empresa como:
+- Empresas.
+- Clientes.
+- Proyectos.
+- Contacto con el cliente.
+- Recordatorio de eventos.
+- entre otras funciones.
+
+##Framework
+El framework para el desarrollo de este es Laravel, desarrollado en el lenguaje de programación PHP.
+
+<p align="center">
+	<img src="https://camo.githubusercontent.com/5ceadc94fd40688144b193fd8ece2b805d79ca9b/68747470733a2f2f6c61726176656c2e636f6d2f6173736574732f696d672f636f6d706f6e656e74732f6c6f676f2d6c61726176656c2e737667">
+	<img src="https://dynamicimagesmx-v2b.netdna-ssl.com/product_class_external_product/php1.png">
 </p>
 
-## About Laravel
+##Base de datos
+La base de datos a utilizar es PostgreSQL.
+En el que dentro de esta base se manejará de manera local para pruebas y muy probablemente para la versión de entrega. 
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/postgres/logo.png">
+</p>
+
+
+
+<!-- ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
 
@@ -50,4 +90,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 #hagane
-# hagane
+# hagane -->
