@@ -25,7 +25,7 @@ El framework para el desarrollo y funcionamiento de este es Laravel, desarrollad
 <p align="center">
 	<img src="https://camo.githubusercontent.com/5ceadc94fd40688144b193fd8ece2b805d79ca9b/68747470733a2f2f6c61726176656c2e636f6d2f6173736574732f696d672f636f6d706f6e656e74732f6c6f676f2d6c61726176656c2e737667">
 	<img src="https://dynamicimagesmx-v2b.netdna-ssl.com/product_class_external_product/php1.png">
-	<img src="https://pkp.sfu.ca/wp-content/uploads/2016/09/bootstrap-logo.png">
+	<img src="https://pkp.sfu.ca/wp-content/uploads/2016/09/bootstrap-logo.png" width="180" height="160">
 </p>
 
 ## Base de datos
