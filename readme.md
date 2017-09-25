@@ -2,7 +2,9 @@
 
 <p align="center">
 <a href="https://www.facebook.com/haganesoftware/">
-	<img src="https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png" style="width:150px;height:150px;">
+
+	![](https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png =150x150)
+	<!-- <img src="https://www.hagane.io/img/Simbolo/Simbolo-FondoTransparente.png" style="width:150px;height:150px;"> -->
 	<img src="logoReadme.png">
 </a>
 </p>
@@ -14,8 +16,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p> -->
 
-##Introducción
-
+## Introducción
 **Desarrollo de sistema de control de avances de proyectos para clientes registrados en ambiente web.**
 
 Como dice el texto anterior este es un proyecto de prácticas para la empresa Hagane Software localizado en Monterrey, Nuevo León.
@@ -29,7 +30,7 @@ Este es un sistema desarrollado en ambiente web el control de avances de proyect
 - Recordatorio de eventos.
 - entre otras funciones.
 
-##Framework
+## Framework
 El framework para el desarrollo de este es Laravel, desarrollado en el lenguaje de programación PHP.
 
 <p align="center">
@@ -37,7 +38,7 @@ El framework para el desarrollo de este es Laravel, desarrollado en el lenguaje 
 	<img src="https://dynamicimagesmx-v2b.netdna-ssl.com/product_class_external_product/php1.png">
 </p>
 
-##Base de datos
+## Base de datos
 La base de datos a utilizar es PostgreSQL.
 En el que dentro de esta base se manejará de manera local para pruebas y muy probablemente para la versión de entrega. 
 
