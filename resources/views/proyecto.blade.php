@@ -98,7 +98,7 @@ AQUÍ SE OBSERVAN LAS CARACTERÍSTICAS DE LOS PROYECTOS
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="index.html"><img src="{{ URL::asset('img/logo.png') }}" alt="" style="margin-right: 40px;"></a> 
+      <a href="index.html"><img src="logo.png" alt="" style="margin-right: 40px;"></a> 
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
