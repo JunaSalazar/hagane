@@ -14,33 +14,32 @@
 Route::get('/proyecto', 'ProjectController@index');
 
 Route::get('/avance', function () {
-    return view('avance');
+    return view('avance/avance');
 });
 
 Route::get('/cliente', function () {
-    return view('cliente');
+    return view('cliente/cliente');
 });
 
 Route::get('/empresa', function () {
-    return view('empresa');
+    return view('empresa/empresa');
 });
 
 Route::get('/historial', function () {
-    return view('historial');
+    return view('historial/historial');
 });
-
 Route::get('/modulo', function () {
-    return view('modulo');
+    return view('modulo/modulo');
 });
 
 Route::get('/progreso', function () {
-    return view('progreso');
+    return view('progreso/progreso');
 });
 
 Route::get('/recordatorio', function () {
-    return view('recordatorio');
+    return view('recordatorio/recordatorio');
 });
 
 Route::get('/relacionProyectoCliente', function () {
-    return view('relacionProyectoCliente');
+    return view('relacionProyectoCliente/relacionProyectoCliente');
 });
