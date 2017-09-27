@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Show all of the users for the application.
@@ -16,7 +16,7 @@ class UserController extends Controller
 
         $proyectos = DB::table('proyecto')->get();
 
-        return view('proyecto', ['proyectos' => $proyectos]);
+        return view('/proyecto/proyecto', ['proyectos' => $proyectos]);
 
         // ************************CÓDIGO_BUENO*******************************************************
         // $users = DB::table('users')->paginate(1);

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/proyecto', 'UserController@index', function () {
-    return view('proyecto');
-});
+Route::get('/proyecto', 'ProjectController@index');
 
 Route::get('/avance', function () {
     return view('avance');
