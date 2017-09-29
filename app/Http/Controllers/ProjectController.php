@@ -24,4 +24,16 @@ class ProjectController extends Controller
         // return view('proyecto')->with(['users' => $users]);
         // ************************CÓDIGO_BUENO*******************************************************
     }
+
+
+    public function ingreso(Request $name, $startDate, $finishDate, $cotizatet, $landed){
+        $name = $name->input('nombre');
+        $cotizatet = $cotizatet->input('cotizado');
+        $startDate = $startDate->input('fechaInicio');
+        $finishDate = $finishDate->input('fechFinal');
+        $landed = $landed->input('entregado');
+
+        DB::insert('insert into proyecto (nombre, fechainicio, fechafinal, duracion, cotizado, entregado) values (?, ?, ?, ? ,?, ?)', ['PEDRO', '2017-05-05','2017-05-05','5','SI','NO']);    
+    }
+
 }

@@ -13,6 +13,8 @@
 
 Route::get('/proyecto', 'ProjectController@index');
 
+// Route::put('/proyecto/{id}', 'ProjectController@ingreso');
+
 Route::get('/avance', function () {
     return view('avance/avance');
 });

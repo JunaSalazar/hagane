@@ -59,8 +59,8 @@
 
 
 
-    <!-- ****************************************************** -->
-<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <!-- *****************TABLA************************************* -->
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Nombre</th>
@@ -115,5 +115,7 @@
             @endforeach
         </tbody>
 </table>
+
+{{-- ***********************************FIN TABLA******************************************* --}}
 
 @stop

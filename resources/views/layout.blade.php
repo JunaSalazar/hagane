@@ -112,7 +112,9 @@ div.scroll {
 
 
       {{-- CONTENIDO DEL RESTO DE LAS PÁGINAS*************************** --}}
+      <div id="cuerpo">
         @yield('content')
+      </div>
       {{-- ************************************************************* --}}
 
     

@@ -12,7 +12,11 @@ $red: #e74c3c;*/
 html, body {
   background: #f1f1f1;
   font-family: 'Merriweather', sans-serif;
-  padding: 1em;
+  /*padding: 1em;*/
+}
+
+#cuerpo{
+  padding: 20px;
 }
 
 h1 {
