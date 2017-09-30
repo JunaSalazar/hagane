@@ -10,7 +10,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="/proyecto">
+        <form method="post" action="store">
+
+          {{ csrf_field() }}
+
           <div class="form-group">
             <label for="sel1">Cliente:</label>
             <select class="form-control" id="sel1">
@@ -24,25 +27,24 @@
             <label for="recipient-name" class="form-control-label">Nombre del proyecto</label>
             <input type="text" class="form-control" id="usuarioCliente" minlength="8" maxlength="20" name="nombre">
           </div>
+          <fieldset id = "cotizado">
           <p><b>¿Se ha cotizado?</b></p>
-          <form>
             <div class="radio" name="cotizado">
-              <label><input type="radio" name="optradio" id="cotizado">SI</label>
+              <label><input type="radio" name="cotizado" value = "SI">SI</label>
             </div>
-            <div class="radio">
-              <label><input type="radio" name="optradio" id="cotizado">NO</label>
+            <div class="radio" name="cotizado">
+              <label><input type="radio" name="cotizado" value = "NO">NO</label>
             </div>
-          </form>
+          </fieldset>
+          <fieldset id = "entregado">
           <p><b>¿Se ha entregado?</b></p>
-          <form>
-            <div class="radio" name="entregado">
-              <label><input type="radio" name="optradio" id="entregado">SI</label>
+            <div class="radio" id="entregado">
+              <label><input type="radio" name="entregado" value = "SI">SI</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="optradio" id="entregado">NO</label>
+              <label><input type="radio" name="entregado" value = "NO">NO</label>
             </div>
-            </form>
-
+          </fieldset>
             <div class="row">
               <div class="col-8 col-sm-4">
                 <div class="form-group">
@@ -72,7 +74,7 @@
             <script>
               $( ".mi_calendario" ).datepicker({
               // Formato de la fecha
-              dateFormat: "dd/mm/yy",
+              dateFormat: 'yy-mm-dd',
               // Primer dia de la semana - lunes
               firstDay: 1,
               // Días largo traducido
@@ -93,7 +95,7 @@
           <script>
             $( ".mi_calendario2" ).datepicker({
             // Formato de la fecha
-            dateFormat: "dd/mm/yy",
+            dateFormat: 'yy-mm-dd',
             // Primer dia de la semana - lunes
             firstDay: 1,
             // Días largo traducido
@@ -110,14 +112,12 @@
             }
           });
         </script>
-      </form>
-    </div>
-
-    <div class="modal-footer">
+        <div class="modal-footer">
       <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
       <button type="submit" class="btn btn-success gradient">Guardar</button>
     </div>
-
+      </form>
+    </div>
   </div>
 </div>
 </div>

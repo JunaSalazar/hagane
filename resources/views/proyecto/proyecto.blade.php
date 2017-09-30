@@ -90,6 +90,10 @@
                 <?php 
                 $nombre=substr($p->nombre,1);
                 $nombre = str_replace("}","",$nombre);
+                if((strcmp(substr($nombre,-1),'"'))==0){
+                  $nombre=substr($nombre,1);
+                  $nombre = str_replace('"','',$nombre);
+                }
                 ?>
                 <td>{{ $nombre }}</td>
                 <td>{{ $p->fechainicio }}</td>
@@ -98,11 +102,19 @@
                 <?php 
                 $cotizado=substr($p->cotizado,1);
                 $cotizado = str_replace("}","",$cotizado);
+                if((strcmp(substr($cotizado,-1),'"'))==0){
+                  $cotizado=substr($cotizado,1);
+                  $cotizado = str_replace('"','',$cotizado);
+                }
                 ?>
                 <td>{{ $cotizado }}</td>
                 <?php 
                 $entregado=substr($p->entregado,1);
                 $entregado = str_replace("}","",$entregado);
+                if((strcmp(substr($entregado,-1),'"'))==0){
+                  $entregado=substr($entregado,1);
+                  $entregado = str_replace('"','',$entregado);
+                }
                 ?>
                 <td>{{ $entregado }}</td>
                 <td>

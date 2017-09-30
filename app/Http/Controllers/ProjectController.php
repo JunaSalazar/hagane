@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Proyecto;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
@@ -25,15 +27,43 @@ class ProjectController extends Controller
         // ************************CÓDIGO_BUENO*******************************************************
     }
 
+    public function store(Request $request)
+    {
+        // Validate the request...
 
-    public function ingreso(Request $name, $startDate, $finishDate, $cotizatet, $landed){
-        $name = $name->input('nombre');
-        $cotizatet = $cotizatet->input('cotizado');
-        $startDate = $startDate->input('fechaInicio');
-        $finishDate = $finishDate->input('fechFinal');
-        $landed = $landed->input('entregado');
+        $proyecto = new Proyecto;
 
-        DB::insert('insert into proyecto (nombre, fechainicio, fechafinal, duracion, cotizado, entregado) values (?, ?, ?, ? ,?, ?)', ['PEDRO', '2017-05-05','2017-05-05','5','SI','NO']);    
+// ****************NOMBRE DEL PROYECTO********************
+        $inicio = '{';
+        $nombre = $request->nombre;
+        $final = '}';
+        $nombreProyecto = $inicio . $nombre . $final;
+        $proyecto->nombre = $nombreProyecto;
+// ****************NOMBRE DEL PROYECTO********************
+
+        $proyecto->fechainicio = $request->fechaInicio;
+
+        $proyecto->fechafinal = $request->fechaFinal;
+
+        $proyecto->duracion = '3';
+
+// ****************COTIZADO DEL PROYECTO********************
+        $inicio = '{';
+        $cotizado = $request->cotizado;
+        $final = '}';
+        $cotizadoFinal = $inicio . $cotizado . $final;
+        $proyecto->cotizado = $cotizadoFinal;
+// ****************COTIZADO DEL PROYECTO********************
+
+// ****************ENTREGADO DEL PROYECTO********************
+        $inicio = '{';
+        $entregado = $request->entregado;
+        $final = '}';
+        $entregadoFinal = $inicio . $entregado . $final;
+        $proyecto->entregado = $entregadoFinal;
+// ****************ENTREGADO DEL PROYECTO********************
+
+        $proyecto->save();
     }
 
 }

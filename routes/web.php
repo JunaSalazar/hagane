@@ -13,7 +13,7 @@
 
 Route::get('/proyecto', 'ProjectController@index');
 
-// Route::put('/proyecto/{id}', 'ProjectController@ingreso');
+Route::post('store', 'ProjectController@store');
 
 Route::get('/avance', function () {
     return view('avance/avance');
