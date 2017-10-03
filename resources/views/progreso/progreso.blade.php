@@ -5,8 +5,6 @@
       <!-- FIN DE SECCIÓN DE PERFIL -->
 
     <!-- Empieza Modal button (Alta de cliente)-->
-    <button type="button" class="btn btn-success gradient"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom: 25px;">Progreso</button>
-
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -45,56 +43,91 @@
                     <td>Erick Castillo</td>
                     <td>BAJO</td>
                     <td>20%</td>
-                    <td><span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                    <td>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+
+                    </td>
                   </tr>
                   <tr>
                     <td>MODULO 2</td>
                     <td>Juan Valdez</td>
                     <td>BAJO</td>
                     <td>70%</td>
-                    <td><span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                    <td>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                    </td>
                   </tr>
                   <tr>
                     <td>MODULO 3</td>
                     <td>Carlos Salazar</td>
                     <td>ALTO</td>
                    <td>99%</td>
-                   <td><span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                   <td>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button></td>
                  </tr>
                  <tr>
                     <td>MODULO 3</td>
                     <td>Carlos Salazar</td>
                     <td>ALTO</td>
                    <td>99%</td>
-                   <td><span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                   <td>
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                    </td>
                  </tr>
                  <tr>
                     <td>MODULO 3</td>
                     <td>Carlos Salazar</td>
                     <td>ALTO</td>
                    <td>99%</td>
-                   <td><span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                   <td>
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                    </td>
                  </tr>
                  <tr>
                     <td>MODULO 3</td>
                     <td>Carlos Salazar</td>
                     <td>ALTO</td>
                    <td>99%</td>
-                   <td><span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                   <td>
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                    </td>
                  </tr>
                  <tr>
                     <td>MODULO 3</td>
                     <td>Carlos Salazar</td>
                     <td>ALTO</td>
                    <td>99%</td>
-                   <td><span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                   <td>
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                    </td>
                  </tr>
                  <tr>
                     <td>MODULO 3</td>
                     <td>Carlos Salazar</td>
                     <td>ALTO</td>
                    <td>99%</td>
-                   <td><span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span></td>
+                   <td>
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                    </td>
                  </tr>
 
                </tbody>
@@ -133,6 +166,7 @@
                 <th>Nombre de proyecto</th>
                 <th>Fecha de inicio</th>
                 <th>Fecha final</th>
+                <th>Progreso por módulo</th>
                 <th>Progreso total</th>
             </tr>
         </thead>
@@ -141,6 +175,7 @@
                 <th>Nombre de proyecto</th>
                 <th>Fecha de inicio</th>
                 <th>Fecha final</th>
+                <th>Progreso por módulo</th>
                 <th>Progreso total</th>
             </tr>
         </tfoot>
@@ -149,18 +184,28 @@
                 <td>Aplicación movil"Comiditas"</td>
                 <td>25/06/2017</td>
                 <td>28/09/2018</td>
+                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+                </td>
                 <td>20%</td>
             </tr>
             <tr>
                 <td>Automatización de jardín botánico</td>
                 <td>25/06/2018</td>
                 <td>28/09/2018</td>
+                <td>
+
+                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+
+                  </td>
                 <td>0%</td>
             </tr>
             <tr>
                 <td>Desarrollo de aplicación móvil</td>
                 <td>25/06/2019</td>
                 <td>28/09/2020</td>
+                <td>
+                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+                </td>
                 <td>0%</td>
             </tr>
 

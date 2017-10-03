@@ -15,6 +15,10 @@ Route::get('/proyecto', 'ProjectController@index');
 
 Route::post('store', 'ProjectController@store');
 
+Route::get('/time', function () {
+    return view('timepicker');
+});
+
 Route::get('/avance', function () {
     return view('avance/avance');
 });

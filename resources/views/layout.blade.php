@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hagane</title>
+    <link rel="shortcut icon" type="image/png" href="/img/Simbolo-FondoTransparente.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap2.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
@@ -34,6 +35,16 @@
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
     <!-- Termina Date Picker -->
+
+
+    {{-- EMPIEZA TIMEPICKER --}}
+
+    <script src="{{ URL::asset('vue/dist/vue.min.js') }}"></script>
+    <script src="{{ URL::asset('vue2-timepicker/dist/vue2-timepicker.min.js') }}"></script>
+
+    <link href="{{ URL::asset('vue2-timepicker/dist/vue2-timepicker.min.css') }}" rel="stylesheet"></link>
+
+    {{-- TERMINA TIMEPICKER --}}
 <style>
 #progresoModulo{
     width: 80px;

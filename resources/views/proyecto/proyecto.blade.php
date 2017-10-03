@@ -8,13 +8,6 @@
     @endcomponent
     <!-- Termina Modal button (Alta de cliente)-->
     {{-- ****************************************************************************************** --}}
-
-    {{-- ****************************************************************************************** --}}
-    <!-- Empieza Modal button (AGREGAR MODULOS A PROYECTOS)-->
-    @component('proyecto.registroModuloModal')
-    @endcomponent
-    <!-- Termina Modal button (AGREGAR MODULOS A PROYECTOS)-->
-    {{-- ****************************************************************************************** --}}
     
 <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">

@@ -10,11 +10,11 @@
 <!-- Empieza Modal button (AGREGAR MODULOS A PROYECTOS)-->
     <button type="button" class="btn btn-success gradient"  data-toggle="modal" data-target="#registroModulo" data-whatever="@mdo" style="margin-bottom: 25px;">Registrar modulo</button>
 
-    <div class="modal fade" id="registroModulo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="registroModulo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">Alta de módulos</h3>
+            <h3 class="modal-title" id="registroModulo">Registro de módulos</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <!--<span aria-hidden="true">&times;</span>-->
             </button>
@@ -22,54 +22,68 @@
           <div class="modal-body">
             <form>
               <div class="form-group">
+                <label for="sel1">Seleccione el proyecto:</label>
+                <select class="form-control" id="sel1">
+                  <option></option>
+                  <option>Proyecto1</option>
+                  <option>Proyecto2</option>
+                  <option>Proyecto3</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Cantidad de módulos:</label>
+                <button type="button" class="btn btn-default" style="margin-left: 10px; width: 35px;">-</button>
+                <label for="recipient-name" class="form-control-label">1</label>
+                <button type="button" class="btn btn-default" style="width: 35px;">+</button>
+              </div>
+
+          <div class="form-group">
+                <h4 class="text-primary"><label for="recipient-name" class="form-control-label">Módulo 1</label></h4>
+
+                <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Cantidad de encargados:</label>
+                <button type="button" class="btn btn-default" style="margin-left: 10px; width: 35px;">-</button>
+                <label for="recipient-name" class="form-control-label">1</label>
+                <button type="button" class="btn btn-default" style="width: 35px;">+</button>
+              </div>
+
+              <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Nombre del módulo</label>
                 <input type="text" class="form-control" id="nombreModulo" minlength="8" maxlength="20">
               </div>
 
               <div class="form-group">
-                <label for="recipient-name" class="form-control-label">Proyecto a añadir el módulo</label>
-                <select id="proyectoModulo" class="form-control">
-                  <option>NO</option>
-                  <option>HAY</option>
-                  <option>NADA</option>
-                  <option>AÚN</option>
-                </select>
-              </div>
-
-              <p><b>Nivel de importancia:</b></p>
-              <form>
-              <div class="radio">
-                <label><input type="radio" name="optradio" id="importanciaModulo">BAJO</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="optradio" id="importanicaModulo">MEDIO</label>
-              </div>
-              <div class="radio">
-                <label><input type="radio" name="optradio" id="importanciaModulo">ALTO</label>
-              </div>
-              </form>
-
-              <div class="half left cf">
-              <label for="recipient-name" class="form-control-label">Responsable del módulo</label>
-                <select id="responsableModulo" class="form-control">
-                  <option>Erick Castillo</option>
-                  <option>Erick Valdez</option>
-                  <option>Juan Salazar</option>
-                  <option>Luis García</option>
-                </select>
-              </div>
-              <div class="half right cf">
-                <label for="recipient-name" class="form-control-label">Progreso del módulo</label>
-                <input type="number" class="form-control" id="progresoModulo"><p>%</p>
-              </div>
-
-              <!-- Caja de comentarios
-
-              <div class="form-group">
-                <label for="message-text" class="form-control-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-              -->
+                  <label for="sel1">Responsable:</label>
+                      <select class="form-control" id="seleccion_responsable" style="width:200px;">
+                          <option></option>
+                          <option>Empleado1</option>
+                          <option>Empleado2</option>
+                          <option>Empleado3</option>
+                      </select>
+               </div>
+              <div class="row">
+                <div class="col-8 col-sm-4">
+                      <div class="form-group">
+                        <label for="recipient-name" class="form-control-label" style="width:140px;">Peso en el proyecto:</label>
+                              <div class="input-group" style="width:120px; ">
+                                <input type="number" class="form-control" id="progresoModulo">
+                                <span class="input-group-addon" id="peso_proyecto">%</span>
+                              </div>
+                      </div>
+                </div>
+                <div class="col-4 col-sm-4">
+                      <div class="form-group">
+                          <label for="sel1">Nivel de importancia:</label>
+                              <select class="form-control" id="seleccion_responsable" style="width:100px;">
+                                  <option></option>
+                                  <option>Bajo</option>
+                                  <option>Medio</option>
+                                  <option>Alto</option>
+                              </select>
+                      </div>
+                </div>
+              </div> 
+          </div>
             </form>
           </div>
           <div class="modal-footer">
@@ -184,7 +198,9 @@
                 <td>
 
 
-                  <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
 
                 </td>

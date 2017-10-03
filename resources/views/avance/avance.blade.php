@@ -87,9 +87,7 @@
 
 
 <!-- Empieza Modal button (AGREGAR MODULOS A PROYECTOS)-->
-    <button type="button" class="btn btn-success gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 25px;">Prueba de imágen y comentario</button>
-
-    <div class="modal fade" id="pruebaModulo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="pruebaModulo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -102,7 +100,7 @@
             <form>
 
             <div class="half left cf">
-              <img src="iconoImagen.png" style="width:250px; height:250px;">
+              <img src="/img/iconoImagen.png" style="width:250px; height:250px;">
             </div>
             <div class="half right cf">
                 <p for="recipient-name" class="form-control-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et ipsum eros. Sed metus purus, lacinia ut ex et, cursus interdum risus. Curabitur non congue augue. In feugiat fermentum lacus, eget condimentum nisl sodales interdum. Fusce nisi augue, aliquam accumsan massa sed, tempor rhoncus augue. Sed urna sapien, vulputate vel ligula a, venenatis posuere nulla. In pellentesque eros sed turpis venenatis, id tincidunt sem efficitur.</p>
@@ -163,31 +161,32 @@
                 <td>PROYECTO 1</td>
                 <td>AVANCE 1</td>
                 <td>Este es un avance para este proyecto</td>
-                <td><img src="iconoImagen.png" style="width:25px; height:25px;"></td>
+                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button>
+                </td>
             </tr> 
             <tr>
                 <td></td>
                 <td>AVANCE 2</td>
                 <td>Este es un avance para este proyecto</td>
-                <td><img src="iconoImagen.png" style="width:25px; height:25px;"></td>
+                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button></td>
             </tr>
             <tr>
                 <td>PROYECTO 2</td>
                 <td>AVANCE 1</td>
                 <td>Este es un avance para este proyecto</td>
-                <td><img src="iconoImagen.png" style="width:25px; height:25px;"></td>
+                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button></td>
             </tr>
             <tr>
                 <td></td>
                 <td>AVANCE 2</td>
                 <td>Este es un avance para este proyecto</td>
-                <td> </td>
+                <td>{{-- <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button> --}}</td>
             </tr>
             <tr>
                 <td></td>
                 <td>AVANCE 3</td>
                 <td>Este es un avance para este proyecto</td>
-                <td><img src="iconoImagen.png" style="width:25px; height:25px;"></td>
+                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button></td>
             </tr>           
         </tbody>
 </table>      
