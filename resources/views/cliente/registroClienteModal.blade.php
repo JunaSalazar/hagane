@@ -10,26 +10,26 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form method="post" action="store">
+              {{ csrf_field() }}
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Nombre(s)</label>
-                <input type="text" class="form-control" id="usuarioCliente" 
-               minlength="8" maxlength="20">
+                <input type="text" class="form-control" id="usuarioCliente" name = "nombre_cliente" maxlength="20">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Apellido paterno</label>
-                <input type="password" class="form-control" id="contrasenaCliente" minlength="8" maxlength="20">
+                <input type="password" class="form-control" id="contrasenaCliente" name = "apellido_paterno" maxlength="20">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Apellido materno</label>
-                <input type="text" class="form-control" id="nombreCliente" maxlength="50">
+                <input type="text" class="form-control" id="nombreCliente" name = "apellido_materno" maxlength="50">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Empresa donde pertenece</label>
-                <select class="form-control" id="clienteEmpresa">
+                <select class="form-control" id="clienteEmpresa" name="empresa_cliente">
                   <option>EMPRESA 1</option>
                   <option>EMPRESA 2</option>
                   <option>EMPRESA 3</option>
@@ -38,25 +38,24 @@
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Correo electrónico</label>
-                <input type="text" class="form-control" id="amCliente" maxlength="20">
+                <input type="text" class="form-control" id="correo" name="correo_cliente" maxlength="60">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Teléfono</label>
-                <input type="text" class="form-control" id="nombreEmpresaCliente" maxlength="30">
+                <input type="text" class="form-control" name = "telefono_cliente" maxlength="30">
               </div>
               
-              <p><b>Tipo de cliente:</b></p>
-              <form>
-
-              <div class="radio">
-                <label><input type="radio" name="optradio" id="tipoClienteActual">Actual</label>
+              <fieldset id = "tipo">
+                <p><b>Tipo de cliente:</b></p>
+              <div class="radio" name="tipo">
+                <label><input type="radio" name="tipo" value ="ACTUAL">ACTUAL</label>
               </div>
-
-              <div class="radio">
-                <label><input type="radio" name="optradio" id="tipoClienteProspecto">Prospecto</label>
+              <div class="radio" name="tipo">
+                <label><input type="radio" name="tipo" value ="PROSPECTO">PROSPECTO</label>
               </div>
-              </form>
+              </fieldset>
+
             </form>
           </div>
           <div class="modal-footer">

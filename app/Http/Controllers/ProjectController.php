@@ -64,6 +64,8 @@ class ProjectController extends Controller
 // ****************ENTREGADO DEL PROYECTO********************
 
         $proyecto->save();
+
+        return back();
     }
 
 }
