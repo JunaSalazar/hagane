@@ -14,26 +14,22 @@
               {{ csrf_field() }}
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Nombre(s)</label>
-                <input type="text" class="form-control" id="usuarioCliente" name = "nombre_cliente" maxlength="20">
+                <input type="text" class="form-control" id="nombre" name = "nombre_cliente" maxlength="20">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Apellido paterno</label>
-                <input type="password" class="form-control" id="contrasenaCliente" name = "apellido_paterno" maxlength="20">
+                <input type="text" class="form-control" id="apellidoPaterno" name = "apellido_paterno" maxlength="20">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Apellido materno</label>
-                <input type="text" class="form-control" id="nombreCliente" name = "apellido_materno" maxlength="50">
+                <input type="text" class="form-control" id="apellidoMaterno" name = "apellido_materno" maxlength="50">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Empresa donde pertenece</label>
-                <select class="form-control" id="clienteEmpresa" name="empresa_cliente">
-                  <option>EMPRESA 1</option>
-                  <option>EMPRESA 2</option>
-                  <option>EMPRESA 3</option>
-                </select>
+                {{ $empresas }}
               </div>
 
               <div class="form-group">
@@ -56,12 +52,12 @@
               </div>
               </fieldset>
 
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-success gradient">Guardar</button>
+              </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-success gradient">Guardar</button>
-          </div>
+          </div>         
         </div>
       </div>
     </div>

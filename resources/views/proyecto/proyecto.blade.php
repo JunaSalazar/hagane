@@ -92,7 +92,7 @@
                 <td>{{ $p->fechainicio }}</td>
                 <td>{{ $p->fechafinal }}</td>
                 <td>{{ $p->duracion }}</td>
-                <?php 
+                <?php
                 $cotizado=substr($p->cotizado,1);
                 $cotizado = str_replace("}","",$cotizado);
                 if((strcmp(substr($cotizado,-1),'"'))==0){

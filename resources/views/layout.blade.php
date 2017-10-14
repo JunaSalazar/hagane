@@ -50,6 +50,14 @@
     width: 80px;
 }
 
+#calleEmpresa{
+    width: 80%;
+}
+
+#numeroEmpresa{
+    width: 50%;
+}
+
 div.scroll {
     width: auto ;
     height: 250px;

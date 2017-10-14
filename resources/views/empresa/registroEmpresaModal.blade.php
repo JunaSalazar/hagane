@@ -14,24 +14,28 @@
               {{ csrf_field() }}
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre_empresa" minlength="8" maxlength="20">
+                <input type="text" class="form-control" name="nombre_empresa" minlength="1" maxlength="20">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Razón Social</label>
-                <input type="text" class="form-control" name="razon_social" minlength="8" maxlength="20">
+                <input type="text" class="form-control" name="razon_social" minlength="1" maxlength="20">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">RFC</label>
-                <input type="text" class="form-control" name="rfc" minlength="8" maxlength="20">
+                <input type="text" class="form-control" name="rfc" minlength="1" maxlength="20">
               </div>
 
               <p><b>Dirección:</b></p>
 
-              <div class="form-group">
-                <label for="recipient-name" class="form-control-label">Calle y número</label>
-                <input type="text" class="form-control" name="calle_y_numero" maxlength="50">
+              <div class="half left cf">
+              <label for="recipient-name" class="form-control-label">Calle</label>
+                <input type="text" class="form-control" id="calleEmpresa" name="calle_empresa" maxlength="50">
+              </div>
+              <div class="half right cf">
+                <label form="recipient-name" class="form-control-label">Número</label>                
+                <input type="number" class="form-control" id="numeroEmpresa" name="numero_empresa" maxlength="50">
               </div>
 
               <div class="form-group">
@@ -65,11 +69,12 @@
                   <option>Canadá</option>
                 </select>
               </div>
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-success gradient">Guardar</button>
+              </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-success gradient">Guardar</button>
           </div>
         </div>
       </div>

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Cliente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class ClienteController extends Controller
 {
@@ -14,11 +17,14 @@ class ClienteController extends Controller
     public function index()
     {
 
-        return view('cliente/cliente');
-        
-        // $clientes = DB::table('cliente')->get();
+        // return view('cliente/cliente');
 
-        // return view('/cliente/cliente', ['clientes' => $clientes]);
+        $empresas = DB::table('empresa')->get();
+        
+        $clientes = DB::table('cliente')->get();
+
+        return view('/cliente/cliente', compact('clientes', 'empresas'));
+        
     }
 
     /**
@@ -44,19 +50,21 @@ class ClienteController extends Controller
 
         /*Nombre de la tabla->atributo = $request->NOMBRE DEL CAMPO*/
 
-        $cliente->nombre = $request->nombre_cliente;
+        $cliente->nombre = '{'.$request->nombre_cliente.'}';
 
-        $cliente->ap = $request->apellido_paterno;
+        $cliente->apellido_paterno = '{'.$request->apellido_paterno.'}';
 
-        $cliente->am = $request->apellido_materno;
+        $cliente->apellido_materno = '{'.$request->apellido_materno.'}';
 
-        $cliente->empresa = $request->empresa_cliente;
+        $cliente->id_empresa = $request->empresa_cliente;
 
-        $cliente->correo = $request->correo_cliente;
+        $cliente->contrasenia = '{ABCD}';
 
-        $cliente->telefono = $request->telefono_cliente;
+        $cliente->correo = '{'.$request->correo_cliente.'}';
 
-        $cliente->tipo = $request->tipo;
+        $cliente->telefono = '{'.$request->telefono_cliente.'}';
+
+        $cliente->tipo_cliente = '{'.$request->tipo.'}';
 
         $cliente->save();
 

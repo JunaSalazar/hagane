@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Empresa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class EmpresaController extends Controller
 {
@@ -14,11 +16,11 @@ class EmpresaController extends Controller
     public function index()
     {
 
-        return view('empresa/empresa');
+        // return view('empresa/empresa');
         
-        // $empresas = DB::table('empresa')->get();
+        $empresas = DB::table('empresa')->get();
 
-        // return view('/empresa/empresa', ['empresas' => $empresas]);
+        return view('/empresa/empresa', ['empresas' => $empresas]);
     }
 
     /**
@@ -43,23 +45,27 @@ class EmpresaController extends Controller
 
         /*Nombre de la tabla->atributo = $request->NOMBRE DEL CAMPO*/  
 
-        $empresa->nombre = $request->nombre_empresa;
+        $empresa->nombre = '{'.$request->nombre_empresa.'}';
 
-        $empresa->razon = $request->razon_social;
+        $empresa->razon_social = '{'.$request->razon_social.'}';
 
-        $empresa->rfc = $request->rfc;
+        $empresa->rfc = '{'.$request->rfc.'}';
 
-        $empresa->calle_y_numero = $request->calle_y_numero;
+        $empresa->calle = '{'.$request->calle_empresa.'}';
 
-        $empresa->colonia = $request->colonia;
+        $numero = '{'.$request->numero_empresa.'}';
 
-        $empresa->codigopostal  = $request->codigo_postal;
+        $empresa->numero =  $numero;       
 
-        $empresa->ciudad  = $request->ciudad_empresa;
+        $empresa->colonia = '{'.$request->colonia_empresa.'}';
 
-        $empresa->estado  = $request->estado_empresa;
+        $empresa->codigo_postal  = '{'.$request->codigo_postal.'}';
 
-        $empresa->pais  = $request->pais_empresa;
+        $empresa->ciudad  = '{'.$request->ciudad_empresa.'}';
+
+        $empresa->estado  = '{'.$request->estado_empresa.'}';
+
+        $empresa->pais  = '{'.$request->pais_empresa.'}';
 
         $empresa->save();
 

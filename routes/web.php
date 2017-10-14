@@ -17,7 +17,11 @@ Route::post('store', 'ProjectController@store');
 
 Route::get('/empresa', 'EmpresaController@index');
 
+Route::post('store', 'EmpresaController@store');
+
 Route::get('/cliente', 'ClienteController@index');
+
+Route::post('store', 'ClienteController@store');
 
 Route::get('/recordatorio', function () {
     return view('recordatorio/recordatorio');

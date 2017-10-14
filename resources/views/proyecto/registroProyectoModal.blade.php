@@ -25,7 +25,7 @@
           </div>
           <div class="form-group">
             <label for="recipient-name" class="form-control-label">Nombre del proyecto</label>
-            <input type="text" class="form-control" id="usuarioCliente" minlength="8" maxlength="20" name="nombre">
+            <input type="text" class="form-control" id="usuarioCliente" minlength="8" maxlength="20" name="nombre_empresa">
           </div>
           <fieldset id = "cotizado">
           <p><b>¿Se ha cotizado?</b></p>

@@ -5,6 +5,23 @@
     <!-- Empieza Modal button (Alta de cliente)-->
     
     @component('cliente.registroClienteModal')
+    @slot('empresas')
+    <select class="form-control" id="clienteEmpresa" name="empresa_cliente">
+        @foreach($empresas as $e)
+        <?php
+        $nombre=substr($e->nombre,1);
+        $nombre = str_replace("}","",$nombre);
+        if((strcmp(substr($nombre,-1),'"'))==0){
+            $nombre=substr($nombre,1);
+            $nombre = str_replace('"','',$nombre);
+        }
+
+        $id=$e->id;
+        ?>
+        <option value = '{{ $id }}'>{{ $nombre }}</option>
+        @endforeach      
+    </select>
+    @endslot
     @endcomponent
 
     <!-- Termina Modal button (Alta de cliente)-->
@@ -33,55 +50,107 @@
             </tr>
         </tfoot>
         <tbody>
-            <tr>
-                <td>Juan Lopez</td>
-                <td>jlopez@gmail.com</td>
-                <td>8115191366</td>
-                <td>Softek</td>
-                <td>Actual</td>
-                <td>
+            @foreach($clientes as $c)
+          <tr>
+                <?php 
+                // CAMPOS PARA NOMBRE COMPLETO**********************************
+                $nombre=substr($c->nombre,1);
+                $nombre = str_replace("}","",$nombre);
+                if((strcmp(substr($nombre,-1),'"'))==0){
+                  $nombre=substr($nombre,1);
+                  $nombre = str_replace('"','',$nombre);
+                }
 
+                $ap=substr($c->apellido_paterno,1);
+                $ap = str_replace("}","",$ap);
+                if((strcmp(substr($ap,-1),'"'))==0){
+                  $ap=substr($ap,1);
+                  $ap = str_replace('"','',$ap);
+                }
+
+                $am=substr($c->apellido_materno,1);
+                $am = str_replace("}","",$am);
+                if((strcmp(substr($am,-1),'"'))==0){
+                  $am=substr($am,1);
+                  $am = str_replace('"','',$am);
+                }
+                // CAMPOS PARA NOMBRE COMPLETO************************************
+
+                // CAMPOS PARA CORREO************************************
+                $correo=substr($c->correo,1);
+                $correo = str_replace("}","",$correo);
+                if((strcmp(substr($correo,-1),'"'))==0){
+                  $correo=substr($correo,1);
+                  $correo = str_replace('"','',$correo);
+                }
+                // CAMPOS PARA CORREO************************************
+
+                // CAMPOS PARA TELEFONO************************************
+                $telefono=substr($c->telefono,1);
+                $telefono = str_replace("}","",$telefono);
+                if((strcmp(substr($telefono,-1),'"'))==0){
+                  $telefono=substr($telefono,1);
+                  $telefono = str_replace('"','',$telefono);
+                }
+                // CAMPOS PARA TELEFONO************************************
+
+                // CAMPOS PARA EMPRESA************************************
+
+                $empresa = DB::table('empresa')
+                            ->join('cliente', 'cliente.id_empresa', '=', 'empresa.id')
+                            ->select('empresa.id','empresa.nombre')
+                            ->get();
+
+                foreach($empresa as $e){
+                    if($e->id == $c->id_empresa){
+                        $empresa = $e->nombre;
+                        $empresa=substr($empresa,1);
+                        $empresa = str_replace("}","",$empresa);
+                        if((strcmp(substr($empresa,-1),'"'))==0){
+                            $empresa=substr($empresa,1);
+                            $empresa = str_replace('"','',$empresa);
+                        }
+                    }
+                }
+
+                // foreach($empresas as $e){
+                //     if(($e->id) == ($c->id_empresa)){
+                //         $empresa = $e->nombre;
+                //         $empresa=substr($empresa,1);
+                //         $empresa = str_replace("}","",$empresa);
+                //         if((strcmp(substr($empresa,-1),'"'))==0){
+                //             $empresa=substr($empresa,1);
+                //             $empresa = str_replace('"','',$empresa);
+                //         }
+                //     }
+                // }
+                // CAMPOS PARA EMPRESA************************************
+
+                // CAMPOS PARA TIPO************************************
+                $tipo=substr($c->tipo_cliente,1);
+                $tipo = str_replace("}","",$tipo);
+                if((strcmp(substr($tipo,-1),'"'))==0){
+                  $tipo=substr($tipo,1);
+                  $tipo = str_replace('"','',$tipo);
+                }
+                // CAMPOS PARA TIPO************************************
+
+
+                $nombre_completo = $nombre.' '.$ap.' '.$am;
+                ?>
+                <td>{{ $nombre_completo }}</td>
+                <td>{{ $correo }}</td>
+                <td>{{ $telefono }}</td>
+                <td>{{ $empresa }}</td>
+                <td>{{ $tipo }}</td>
+                <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
-
+                  <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
                 </td>
             </tr>
-            <tr>
-                <td>José González</td>
-                <td>jgz@gmail.com</td>
-                <td>8115473655</td>
-                <td>Hagane</td>
-                <td>Actual</td>
-                <td>
-
-
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
-
-
-                </td>
-            </tr>
-            <tr>
-                <td>Ivan Femat</td>
-                <td>lamole@gmail.com</td>
-                <td>8118524599</td>
-                <td>Franco Escamilla</td>
-                <td>Prospecto</td>
-                <td>
-
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
-
-
-                </td>
-            </tr>
+            @endforeach
         </tbody>
 </table>      
 
