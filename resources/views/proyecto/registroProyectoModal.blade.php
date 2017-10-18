@@ -10,22 +10,20 @@
         </button>
       </div>
       <div class="modal-body">
-        <form method="post" action="store">
+        <form method="post" action="/proyecto/store">
 
           {{ csrf_field() }}
 
           <div class="form-group">
-            <label for="sel1">Cliente:</label>
-            <select class="form-control" id="sel1">
-              <option></option>
-              <option>Cliente1</option>
-              <option>Cliente2</option>
-              <option>Cliente</option>
+            <label for="recipient-name" class="form-control-label">Cliente:</label>
+            <select class="form-control" name="cliente_proyecto">
+            {{ $nombre_clientes }}
             </select>
           </div>
+
           <div class="form-group">
             <label for="recipient-name" class="form-control-label">Nombre del proyecto</label>
-            <input type="text" class="form-control" id="usuarioCliente" minlength="8" maxlength="20" name="nombre_empresa">
+            <input type="text" class="form-control" id="usuarioCliente" maxlength="20" name="nombre_proyecto">
           </div>
           <fieldset id = "cotizado">
           <p><b>¿Se ha cotizado?</b></p>
@@ -53,7 +51,6 @@
                       <label for="recipient-name" class="form-control-label">Fecha de inicialización:</label>
                       <input id="mi_calendario" type="text" class="mi_calendario form-control" name="fechaInicio" />
                       <label for="mi_calendario" class="input-group-addon generic_btn"><i class="fa fa-calendar" aria-hidden="true"></i></label>
-
                     </div>
                   </div>
                 </div>

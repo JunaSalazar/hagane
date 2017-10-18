@@ -5,6 +5,37 @@
     {{-- ****************************************************************************************** --}}
     <!-- Empieza Modal button (Alta de proyecto)-->
     @component('proyecto.registroProyectoModal')
+      @slot('nombre_clientes')
+        @foreach($clientes as $c)
+        <?php
+        $nombre=substr($c->nombre,1);
+        $nombre = str_replace("}","",$nombre);
+        if((strcmp(substr($nombre,-1),'"'))==0){
+            $nombre=substr($nombre,1);
+            $nombre = str_replace('"','',$nombre);
+        }
+
+        $a_paterno=substr($c->apellido_paterno,1);
+        $a_paterno = str_replace("}","",$a_paterno);
+        if((strcmp(substr($a_paterno,-1),'"'))==0){
+            $a_paterno=substr($a_paterno,1);
+            $a_paterno = str_replace('"','',$a_paterno);
+        }
+
+        $a_materno=substr($c->apellido_materno,1);
+        $a_materno = str_replace("}","",$a_materno);
+        if((strcmp(substr($a_materno,-1),'"'))==0){
+            $a_materno=substr($a_materno,1);
+            $a_materno = str_replace('"','',$a_materno);
+        }
+
+        $nombre_completo=$nombre.' '.$a_paterno.' '.$a_materno;
+
+        $id_cliente=$c->id;
+        ?>
+        <option value = '{{ $id_cliente }}'>{{ $nombre_completo }}</option>
+        @endforeach
+    @endslot
     @endcomponent
     <!-- Termina Modal button (Alta de cliente)-->
     {{-- ****************************************************************************************** --}}

@@ -91,7 +91,7 @@ div.scroll {
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Cliente</span><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('cliente') }}">Ver clientes</a></li>
-            <li><a href="{{ url('relacionProyectoCliente') }}">Clientes y sus proyectos</a></li>
+            <li><a href="{{ url('proyecto_cliente') }}">Clientes y sus proyectos</a></li>
           </ul>
         </li>
 

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
-class ClienteController extends Controller
+class ProyectoClienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +15,11 @@ class ClienteController extends Controller
      */
     public function index()
     {
-
-        $empresas = DB::table('empresa')->get();
-        
         $clientes = DB::table('cliente')->get();
 
-        return view('/cliente/cliente', compact('clientes', 'empresas'));
-        
+        $proyectos = DB::table('proyecto')->get();
+
+        return view('/proyecto_cliente/proyecto_cliente', compact('proyectos','clientes'));
     }
 
     /**
@@ -43,32 +40,7 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-
-        $cliente = new Cliente;
-
-        /*Nombre de la tabla->atributo = $request->NOMBRE DEL CAMPO*/
-
-        $cliente->nombre = '{'.$request->nombre_cliente.'}';
-
-        $cliente->apellido_paterno = '{'.$request->apellido_paterno.'}';
-
-        $cliente->apellido_materno = '{'.$request->apellido_materno.'}';
-
-        $cliente->id_empresa = $request->empresa_cliente;
-
-        $cliente->contrasenia = '{ABCD}';
-
-        $cliente->correo = '{'.$request->correo_cliente.'}';
-
-        $cliente->telefono = '{'.$request->telefono_cliente.'}';
-
-        $cliente->tipo_cliente = '{'.$request->tipo.'}';
-
-        $cliente->save();
-
-        return back();
-
-
+        //
     }
 
     /**

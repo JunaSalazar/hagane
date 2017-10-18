@@ -15,16 +15,12 @@ class ProjectController extends Controller
      * @return Response
      */
     public function index(){
+        
+        $clientes = DB::table('cliente')->get();
 
         $proyectos = DB::table('proyecto')->get();
 
-        return view('/proyecto/proyecto', ['proyectos' => $proyectos]);
-
-        // ************************CÓDIGO_BUENO*******************************************************
-        // $users = DB::table('users')->paginate(1);
-
-        // return view('proyecto')->with(['users' => $users]);
-        // ************************CÓDIGO_BUENO*******************************************************
+        return view('/proyecto/proyecto', compact('proyectos','clientes'));
     }
 
     public function store(Request $request)
@@ -33,34 +29,25 @@ class ProjectController extends Controller
 
         $proyecto = new Proyecto;
 
-// ****************NOMBRE DEL PROYECTO********************
-        $inicio = '{';
-        $nombre = $request->nombre;
-        $final = '}';
-        $nombreProyecto = $inicio . $nombre . $final;
-        $proyecto->nombre = $nombreProyecto;
-// ****************NOMBRE DEL PROYECTO********************
+        /*Nombre de la tabla->atributo = $request->NOMBRE DEL CAMPO*/
 
+        $inicio = '{';
+        $final = '}';
+
+        $proyecto->id_cliente = $request->cliente_proyecto;
+
+// ****************NOMBRE DEL PROYECTO********************
+        $proyecto->nombre = $inicio.$request->nombre_proyecto.$final;
+// ****************NOMBRE DEL PROYECTO********************
         $proyecto->fechainicio = $request->fechaInicio;
-
         $proyecto->fechafinal = $request->fechaFinal;
-
         $proyecto->duracion = '3';
-
 // ****************COTIZADO DEL PROYECTO********************
-        $inicio = '{';
-        $cotizado = $request->cotizado;
-        $final = '}';
-        $cotizadoFinal = $inicio . $cotizado . $final;
-        $proyecto->cotizado = $cotizadoFinal;
+        $proyecto->cotizado = $inicio . $request->cotizado . $final;
 // ****************COTIZADO DEL PROYECTO********************
 
 // ****************ENTREGADO DEL PROYECTO********************
-        $inicio = '{';
-        $entregado = $request->entregado;
-        $final = '}';
-        $entregadoFinal = $inicio . $entregado . $final;
-        $proyecto->entregado = $entregadoFinal;
+        $proyecto->entregado = $inicio.$request->entregado.$final;
 // ****************ENTREGADO DEL PROYECTO********************
 
         $proyecto->save();

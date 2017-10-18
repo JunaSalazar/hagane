@@ -5,23 +5,21 @@
     <!-- Empieza Modal button (Alta de cliente)-->
     
     @component('cliente.registroClienteModal')
-    @slot('empresas')
-    <select class="form-control" id="clienteEmpresa" name="empresa_cliente">
-        @foreach($empresas as $e)
-        <?php
-        $nombre=substr($e->nombre,1);
-        $nombre = str_replace("}","",$nombre);
-        if((strcmp(substr($nombre,-1),'"'))==0){
-            $nombre=substr($nombre,1);
-            $nombre = str_replace('"','',$nombre);
-        }
+        @slot('empresas')
+            @foreach($empresas as $e)
+                <?php
+                $nombre=substr($e->nombre,1);
+                $nombre = str_replace("}","",$nombre);
+                if((strcmp(substr($nombre,-1),'"'))==0){
+                $nombre=substr($nombre,1);
+                $nombre = str_replace('"','',$nombre);
+                }
 
-        $id=$e->id;
-        ?>
-        <option value = '{{ $id }}'>{{ $nombre }}</option>
-        @endforeach      
-    </select>
-    @endslot
+                $id=$e->id;
+                ?>
+            <option value = '{{ $id }}'>{{ $nombre }}</option>
+            @endforeach      
+        @endslot
     @endcomponent
 
     <!-- Termina Modal button (Alta de cliente)-->
@@ -94,14 +92,7 @@
                 }
                 // CAMPOS PARA TELEFONO************************************
 
-                // CAMPOS PARA EMPRESA************************************
-
-                $empresa = DB::table('empresa')
-                            ->join('cliente', 'cliente.id_empresa', '=', 'empresa.id')
-                            ->select('empresa.id','empresa.nombre')
-                            ->get();
-
-                foreach($empresa as $e){
+                foreach($empresas as $e){
                     if($e->id == $c->id_empresa){
                         $empresa = $e->nombre;
                         $empresa=substr($empresa,1);
@@ -112,19 +103,6 @@
                         }
                     }
                 }
-
-                // foreach($empresas as $e){
-                //     if(($e->id) == ($c->id_empresa)){
-                //         $empresa = $e->nombre;
-                //         $empresa=substr($empresa,1);
-                //         $empresa = str_replace("}","",$empresa);
-                //         if((strcmp(substr($empresa,-1),'"'))==0){
-                //             $empresa=substr($empresa,1);
-                //             $empresa = str_replace('"','',$empresa);
-                //         }
-                //     }
-                // }
-                // CAMPOS PARA EMPRESA************************************
 
                 // CAMPOS PARA TIPO************************************
                 $tipo=substr($c->tipo_cliente,1);
@@ -162,4 +140,26 @@
 
 </script>
 
+
+
 @stop
+{{-- 
+// CAMPOS PARA EMPRESA************************************
+
+                // $empresa = DB::table('empresa')
+                //             ->join('cliente', 'cliente.id_empresa', '=', 'empresa.id')
+                //             ->select('empresa.id','empresa.nombre')
+                //             ->get();
+
+                // foreach($empresas as $e){
+                //     if(($e->id) == ($c->id_empresa)){
+                //         $empresa = $e->nombre;
+                //         $empresa=substr($empresa,1);
+                //         $empresa = str_replace("}","",$empresa);
+                //         if((strcmp(substr($empresa,-1),'"'))==0){
+                //             $empresa=substr($empresa,1);
+                //             $empresa = str_replace('"','',$empresa);
+                //         }
+                //     }
+                // }
+                // CAMPOS PARA EMPRESA************************************ --}}

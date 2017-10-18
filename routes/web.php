@@ -13,15 +13,19 @@
 
 Route::get('/proyecto', 'ProjectController@index');
 
-Route::post('store', 'ProjectController@store');
+Route::post('/proyecto/store', 'ProjectController@store');
 
 Route::get('/empresa', 'EmpresaController@index');
 
-Route::post('store', 'EmpresaController@store');
+Route::post('/empresa/store', 'EmpresaController@store');
 
 Route::get('/cliente', 'ClienteController@index');
 
-Route::post('store', 'ClienteController@store');
+Route::post('/cliente/store', 'ClienteController@store');
+
+Route::get('/modulo', 'ModuloController@index');
+
+Route::get('/proyecto_cliente', 'ProyectoClienteController@index');
 
 Route::get('/recordatorio', function () {
     return view('recordatorio/recordatorio');
@@ -42,9 +46,7 @@ Route::get('/avance', function () {
 Route::get('/historial', function () {
     return view('historial/historial');
 });
-Route::get('/modulo', function () {
-    return view('modulo/modulo');
-});
+
 
 Route::get('/progreso', function () {
     return view('progreso/progreso');
@@ -52,6 +54,3 @@ Route::get('/progreso', function () {
 
 
 
-Route::get('/relacionProyectoCliente', function () {
-    return view('relacionProyectoCliente/relacionProyectoCliente');
-});

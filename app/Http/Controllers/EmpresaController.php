@@ -15,8 +15,6 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-
-        // return view('empresa/empresa');
         
         $empresas = DB::table('empresa')->get();
 

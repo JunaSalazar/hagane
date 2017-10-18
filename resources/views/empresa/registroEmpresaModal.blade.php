@@ -10,7 +10,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form method="post" action="store">
+            <form method="post" action="/empresa/store">
               {{ csrf_field() }}
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Nombre</label>
