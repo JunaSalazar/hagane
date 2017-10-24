@@ -27,6 +27,10 @@ Route::get('/modulo', 'ModuloController@index');
 
 Route::get('/proyecto_cliente', 'ProyectoClienteController@index');
 
+Route::get('/avance', 'AvanceController@index');
+
+Route::post('/avance/store', 'AvanceController@store');
+
 Route::get('/recordatorio', function () {
     return view('recordatorio/recordatorio');
 });
@@ -35,9 +39,7 @@ Route::get('/time', function () {
     return view('timepicker');
 });
 
-Route::get('/avance', function () {
-    return view('avance/avance');
-});
+
 
 
 

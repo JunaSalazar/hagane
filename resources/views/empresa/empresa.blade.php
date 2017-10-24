@@ -31,8 +31,6 @@
             </tr>
         </tfoot>
         <tbody>
-
-
             @foreach($empresas as $e)
           <tr>
             <?php 

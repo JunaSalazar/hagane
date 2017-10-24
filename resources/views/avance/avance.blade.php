@@ -6,76 +6,50 @@
 
 
 <!-- Empieza Modal button (AGREGAR MODULOS A PROYECTOS)-->
-    <button type="button" class="btn btn-success gradient"  data-toggle="modal" data-target="#registroModulo" data-whatever="@mdo" style="margin-bottom: 25px;">Registrar prueba</button>
+    @component('avance.registroAvanceModal')
+    @slot('avance_proyecto')
+    @foreach($proyectos as $p)
+    <?php 
+                $nombre=substr($p->nombre,1);
+                $nombre = str_replace("}","",$nombre);
+                if((strcmp(substr($nombre,-1),'"'))==0){
+                  $nombre=substr($nombre,1);
+                  $nombre = str_replace('"','',$nombre);
+                }
 
-    <div class="modal fade" id="registroModulo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">Registro de prueba</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <!--<span aria-hidden="true">&times;</span>-->
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="recipient-name" class="form-control-label">Proyecto</label>
-                <select id="proyectoAvance" class="form-control">
-                  <option>PROYECTO 1</option>
-                  <option>PROYECTO 2</option>
-                  <option>PROYECTO 3</option>
-                  <option>PROYECTO 4</option>
-                </select>
-              </div>
+                $id = $p->id;
 
-              <div class="form-group">
-                <label for="recipient-name" class="form-control-label">Nombre del avance</label>
-                <input type="text" class="form-control" id="nombreAvance">
-              </div>
+    ?>
+    <option value = '{{ $id }}'>{{ $nombre }}</option>
+    @endforeach
+    @endslot
 
-              <div class="form-group">
-                <label for="recipient-name" class="form-control-label">Comentario</label>
-                <textarea class="form-control" name="comentarioAvance" cols="40" rows="5"></textarea>
-              </div>
+    @slot('avance_proyecto_modulo')
+    <?php
+      $relacion = DB::table('proyecto')
+            ->join('modulo', 'proyecto.id', '=', 'modulo.id_proyecto')
+            ->select('modulo.id','modulo.nombre')
+            ->get();
+    ?>
+      @foreach($relacion as $r)
+        <?php
+        // $id_proyecto = $_GET['id_proyecto'];
+        // if($id_proyecto == $r->id){
+          $nombre_modulo=substr($r->nombre,1);
+                $nombre_modulo = str_replace("}","",$nombre_modulo);
+                if((strcmp(substr($nombre_modulo,-1),'"'))==0){
+                  $nombre_modulo=substr($nombre_modulo,1);
+                  $nombre_modulo = str_replace('"','',$nombre_modulo);
+                }
 
-              <div class="form-group">
-                <label for="recipient-name" class="form-control-label">Imagen de prueba</label>
-                <input id="fileInput" type="file" style="display:none;" />
-<input type="button" value="Elegir archivo" onclick="document.getElementById('fileInput').click();" />
-              </div>
-
-              <!-- Caja de comentarios
-
-              <div class="form-group">
-                <label for="message-text" class="form-control-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-              -->
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-success gradient">Guardar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script type="text/javascript">
-        $('#altaUsuario').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var recipient = button.data('whatever') // Extract info from data-* attributes
-          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          var modal = $(this)
-          modal.find('.modal-title').text('New message to ' + recipient)
-          modal.find('.modal-body input').val(recipient)
-      })
-
-    </script>
-
-
+                $id_modulo = $r->id;
+        // }
+                
+        ?>
+    <option value = '{{ $id_modulo }}'>{{ $nombre_modulo }}</option>
+      @endforeach
+    @endslot  
+    @endcomponent
     <!-- Termina Modal button (AGREGAR MODULOS A PROYECTOS)-->
 
 <!-- MODAL PRUEBA VER IMÁGEN
@@ -91,7 +65,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">PRUEBA</h3>
+            <h3 class="modal-title" id="exampleModalLabel">AVANCE</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <!--<span aria-hidden="true">&times;</span>-->
             </button>
@@ -138,6 +112,10 @@
 
 
 <!-- **************************************************************************************************************************************FIN MODAL PRUEBA VER IMAGEN Y COMENTARIO -->
+
+@foreach($avances as $a)
+  {!! Html::image('imagen/'.$a->imagen,'imagen',['class'=>'imagen']) !!}
+@endforeach
 
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
