@@ -27,7 +27,9 @@ Route::get('/modulo', 'ModuloController@index');
 
 Route::get('/proyecto_cliente', 'ProyectoClienteController@index');
 
-Route::get('/avance', 'AvanceController@index');
+Route::get('/avance',array('as'=>'avance','uses'=>'AvanceController@index'));
+
+Route::get('/avance/ajax/{id}',array('as'=>'avance.ajax','uses'=>'AvanceController@myformAjax'));
 
 Route::post('/avance/store', 'AvanceController@store');
 
@@ -38,12 +40,6 @@ Route::get('/recordatorio', function () {
 Route::get('/time', function () {
     return view('timepicker');
 });
-
-
-
-
-
-
 
 Route::get('/historial', function () {
     return view('historial/historial');

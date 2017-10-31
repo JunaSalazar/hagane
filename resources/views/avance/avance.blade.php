@@ -7,48 +7,65 @@
 
 <!-- Empieza Modal button (AGREGAR MODULOS A PROYECTOS)-->
     @component('avance.registroAvanceModal')
-    @slot('avance_proyecto')
-    @foreach($proyectos as $p)
-    <?php 
-                $nombre=substr($p->nombre,1);
-                $nombre = str_replace("}","",$nombre);
-                if((strcmp(substr($nombre,-1),'"'))==0){
+    @slot('relacion_subcategory')
+
+                  <div class="form-group">
+                  <label for="recipient-name" class="form-control-label">Proyecto</label>
+                  <select class="form-control" id="proyecto" name="id_proyecto">
+                  @foreach($proyectos as $key => $value)
+                  <?php 
+                  $nombre=substr($value,1);
+                  $nombre = str_replace("}","",$nombre);
+                  if((strcmp(substr($nombre,-1),'"'))==0){
                   $nombre=substr($nombre,1);
                   $nombre = str_replace('"','',$nombre);
-                }
+                  }
+                  
+                  $id = $key;
+                  
+                  ?>
+                  <option value = '{{ $id }}'>{{ $nombre }}</option>
+                  @endforeach
+                  </select>
+                  </div>
+                  
+                  <div class="form-group">
+                  <label for="recipient-name" class="form-control-label">Modulo</label>
+                  <select class="form-control" id="modulo" name="id_modulo">
+                  </select>
+                  </div>
 
-                $id = $p->id;
 
-    ?>
-    <option value = '{{ $id }}'>{{ $nombre }}</option>
-    @endforeach
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select[name="id_proyecto"]').on('change', function() {
+            var stateID = $(this).val();
+            var elem = document.getElementById("modulo");
+            if(stateID) {
+                $.ajax({
+                    url: '/avance/ajax/'+stateID,
+                    type: "GET",
+                    dataType: "json",
+                    success:function(data) {
+                        $('select[name="id_modulo"]').empty();
+                        $.each(data, function(key, value) {
+                          value = value.replace('{','');
+                          value = value.replace('"','');
+                          value = value.replace('"','');
+                          value = value.replace('}','');
+                            $('select[name="id_modulo"]').append('<option value="'+ key +'">'+ value +'</option>');
+                        });
+                        elem = key;
+                        elem.options[elem.selectedIndex];
+                    }
+                });
+            }else{
+                $('select[name="id_modulo"]').empty();
+            }
+        });
+    });
+</script>
     @endslot
-
-    @slot('avance_proyecto_modulo')
-    <?php
-      $relacion = DB::table('proyecto')
-            ->join('modulo', 'proyecto.id', '=', 'modulo.id_proyecto')
-            ->select('modulo.id','modulo.nombre')
-            ->get();
-    ?>
-      @foreach($relacion as $r)
-        <?php
-        // $id_proyecto = $_GET['id_proyecto'];
-        // if($id_proyecto == $r->id){
-          $nombre_modulo=substr($r->nombre,1);
-                $nombre_modulo = str_replace("}","",$nombre_modulo);
-                if((strcmp(substr($nombre_modulo,-1),'"'))==0){
-                  $nombre_modulo=substr($nombre_modulo,1);
-                  $nombre_modulo = str_replace('"','',$nombre_modulo);
-                }
-
-                $id_modulo = $r->id;
-        // }
-                
-        ?>
-    <option value = '{{ $id_modulo }}'>{{ $nombre_modulo }}</option>
-      @endforeach
-    @endslot  
     @endcomponent
     <!-- Termina Modal button (AGREGAR MODULOS A PROYECTOS)-->
 
@@ -113,14 +130,15 @@
 
 <!-- **************************************************************************************************************************************FIN MODAL PRUEBA VER IMAGEN Y COMENTARIO -->
 
-@foreach($avances as $a)
+{{-- @foreach($avances as $a)
   {!! Html::image('imagen/'.$a->imagen,'imagen',['class'=>'imagen']) !!}
-@endforeach
+@endforeach --}}
 
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Nombre de proyecto</th>
+                <th>Nombre del modulo</th>
                 <th>Nombre de avance</th>
                 <th>Comentario</th>
                 <th>Imagen</th>
@@ -129,43 +147,69 @@
         <tfoot>
             <tr>
                 <th>Nombre de proyecto</th>
+                <th>Nombre del modulo</th>
                 <th>Nombre de avance</th>
                 <th>Comentario</th>
                 <th>Imagen</th>
             </tr>
         </tfoot>
         <tbody>
-            <tr>
-                <td>PROYECTO 1</td>
-                <td>AVANCE 1</td>
-                <td>Este es un avance para este proyecto</td>
-                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button>
-                </td>
-            </tr> 
-            <tr>
-                <td></td>
-                <td>AVANCE 2</td>
-                <td>Este es un avance para este proyecto</td>
-                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button></td>
-            </tr>
-            <tr>
-                <td>PROYECTO 2</td>
-                <td>AVANCE 1</td>
-                <td>Este es un avance para este proyecto</td>
-                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>AVANCE 2</td>
-                <td>Este es un avance para este proyecto</td>
-                <td>{{-- <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button> --}}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>AVANCE 3</td>
-                <td>Este es un avance para este proyecto</td>
-                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#pruebaModulo" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></button></td>
-            </tr>           
+          <?php
+            $relacion = DB::table('documentacion')
+            ->join('proyecto', 'proyecto.id', '=', 'documentacion.id_proyecto')
+            ->join('modulo', 'modulo.id', '=', 'documentacion.id_modulo')
+            ->select('proyecto.id','proyecto.nombre as nombre_proyecto','modulo.nombre as nombre_modulo','documentacion.nombre as nombre_avance','documentacion.imagen as imagen_avance','documentacion.comentario as comentario_avance')
+            ->orderBy('id', 'asc')
+            ->get();
+          ?>
+
+            @foreach($relacion as $r)
+        <?php
+                  $nombre_proyecto=substr($r->nombre_proyecto,1);
+                  $nombre_proyecto = str_replace("}","",$nombre_proyecto);
+                  if((strcmp(substr($nombre_proyecto,-1),'"'))==0){
+                  $nombre_proyecto=substr($nombre_proyecto,1);
+                  $nombre_proyecto = str_replace('"','',$nombre_proyecto);
+                  }
+                  
+                  $nombre_modulo=substr($r->nombre_modulo,1);
+                  $nombre_modulo = str_replace("}","",$nombre_modulo);
+                  if((strcmp(substr($nombre_modulo,-1),'"'))==0){
+                  $nombre_modulo=substr($nombre_modulo,1);
+                  $nombre_modulo = str_replace('"','',$nombre_modulo);
+                  }
+
+                  $nombre_avance=substr($r->nombre_avance,1);
+                  $nombre_avance = str_replace("}","",$nombre_avance);
+                  if((strcmp(substr($nombre_avance,-1),'"'))==0){
+                  $nombre_avance=substr($nombre_avance,1);
+                  $nombre_avance = str_replace('"','',$nombre_avance);
+                  }
+
+                ?>
+        <tr>
+          <td>{{ $nombre_proyecto }}</td>
+          <td>{{ $nombre_modulo }}</td>
+          <td>{{ $nombre_avance }}</td>
+          <td>{{ $r->comentario_avance }}</td>
+          <td>
+
+            @if (is_null($r->imagen_avance))
+
+            <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+            
+            @else
+
+            <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+
+            <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+
+            @endif
+
+
+          </td>
+        </tr>
+        @endforeach      
         </tbody>
 </table>      
 

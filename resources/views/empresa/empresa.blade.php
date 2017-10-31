@@ -9,7 +9,46 @@
 
     <!-- Termina Modal button (Alta de cliente)-->
 
-    <!-- -->
+  <!-- Empieza Modal button (Información de cliente)-->
+
+    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="exampleModalLabel">Datos del proyecto</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          
+          <div class="modal-body">
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Nombre del proyecto</label>
+                <p>Desarrollo de aplicación movil</p>
+              </div>
+
+              <p><b>¿Se ha cotizado?</b></p>
+              <p>SI</p>
+
+              <p><b>¿Se ha entregado?</b></p>
+              <p>NO</p>
+
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Fecha de inicio</label>
+                <p>22/07/2012</p>
+              </div>
+
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Fecha final</label>
+                <p>25/05/2018</p>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Termina Modal button (Información de cliente)-->
 
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
@@ -114,9 +153,7 @@
                 <td>{{ $rfc }}</td>
                 <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
                   <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
                 </td>
             </tr>
             @endforeach

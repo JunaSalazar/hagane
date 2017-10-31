@@ -12,28 +12,17 @@
           <div class="modal-body">
             <form method="post" action="/avance/store">
               {{ csrf_field() }}
-              <div class="form-group">
-                <label for="recipient-name" class="form-control-label">Proyecto</label>
-                <select class="form-control" id="idProyecto" name="id_proyecto">
-                  {{ $avance_proyecto }}
-                </select>
-              </div>
 
-              <div class="form-group">
-                <label for="recipient-name" class="form-control-label">Modulo</label>
-                <select class="form-control" id="clienteEmpresa" name="id_modulo">
-                  {{ $avance_proyecto_modulo }}
-                </select>
-              </div>
+              {{ $relacion_subcategory }}
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Nombre del avance</label>
-                <input type="text" class="form-control" id="nombre_avance">
+                <input type="text" class="form-control" name="nombre_avance">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Comentario</label>
-                <textarea class="form-control" name="comentarioAvance" cols="40" rows="5"></textarea>
+                <textarea class="form-control" name="comentario_avance" cols="40" rows="5"></textarea>
               </div>
 
               <div class="form-group">
