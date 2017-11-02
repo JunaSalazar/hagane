@@ -164,6 +164,9 @@
           ?>
 
             @foreach($relacion as $r)
+
+
+
         <?php
                   $nombre_proyecto=substr($r->nombre_proyecto,1);
                   $nombre_proyecto = str_replace("}","",$nombre_proyecto);
@@ -186,6 +189,13 @@
                   $nombre_avance = str_replace('"','',$nombre_avance);
                   }
 
+                  $imagen_avance=substr($r->imagen_avance,1);
+                  $imagen_avance = str_replace("}","",$imagen_avance);
+                  if((strcmp(substr($imagen_avance,-1),'"'))==0){
+                  $imagen_avance=substr($imagen_avance,1);
+                  $imagen_avance = str_replace('"','',$imagen_avance);
+                  }
+
                 ?>
         <tr>
           <td>{{ $nombre_proyecto }}</td>
@@ -206,10 +216,13 @@
 
             @endif
 
-
           </td>
         </tr>
-        @endforeach      
+
+        {{-- <img src="/storage/{{ $imagen_avance }}" alt="" style="margin-right: 40px;">  INSTRUCCIÓN FUNCIONAL DE DESPLIEGUE DE IMÁGENES NOTA:ES NECESARIO TENER DATOS CON TENER EL DATO DE A QUE MODULO VA DIRIGIDO ES SUFICIENTE, PERO AÚN ASÍ, HAY QUE VALIDAR QUE SE TIENE QUE METER  --}}
+        
+        @endforeach
+
         </tbody>
 </table>      
 

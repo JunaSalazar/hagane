@@ -10,7 +10,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form method="post" action="/avance/store">
+            <form method="post" action="/avance/store" enctype="multipart/form-data">
               {{ csrf_field() }}
 
               {{ $relacion_subcategory }}
@@ -27,7 +27,8 @@
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Imagen de avance</label>
-                {!! Form::file('imagen') !!}
+                <input type="file" id="imagen_avance" name="image"
+          accept=".jpg, .jpeg, .png">
               </div>
 
               <!-- Caja de comentarios

@@ -17,9 +17,9 @@ class ClienteController extends Controller
     public function index()
     {
 
-        $empresas = DB::table('empresa')->get();
+        $empresas = \App\Empresa::all();
         
-        $clientes = DB::table('cliente')->get();
+        $clientes = Cliente::all();
 
         return view('/cliente/cliente', compact('clientes', 'empresas'));
         
