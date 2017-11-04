@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Modulo;
-use App\Ocupa;
+use App\Historial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
-class ModuloController extends Controller
+class HistorialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,13 +16,13 @@ class ModuloController extends Controller
      */
     public function index()
     {
-        $proyectos = \App\Proyecto::all();;
 
-        $modulos = Modulo::all();
+        $clientes = \App\Cliente::all();
+        
+        $contactos = Historial::all();
 
-        $empleados = DB::table('empleado')->get();
+        return view('/historial/historial', compact('contactos', 'clientes'));
 
-        return view('/modulo/modulo', compact('proyectos','modulos','empleados'));
     }
 
     /**
@@ -44,14 +43,26 @@ class ModuloController extends Controller
      */
     public function store(Request $request)
     {
+        // Validate the request...
 
-        //Validaciones
-
-        $ocupa = new Ocupa;
-
-        $modulo = new Modulo;
+        $historial = new Historial;
 
         /*Nombre de la tabla->atributo = $request->NOMBRE DEL CAMPO*/
+
+        $historial->id_cliente = $request->id_cliente;
+
+        // $historial->id_empleado = ;
+
+        $historial->fecha = $request->fecha_contacto;
+
+        $historial->comentario = $request->comentario_contacto;
+
+        $historial->save();
+
+        $invoice = $historial->id;
+
+        return back();
+
     }
 
     /**

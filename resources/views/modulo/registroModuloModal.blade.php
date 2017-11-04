@@ -10,10 +10,12 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form method="post" action="/modulo/store">
+              {{ csrf_field() }}
+
               <div class="form-group">
                 <label for="sel1">Seleccione el proyecto:</label>
-                <select class="form-control" id="clienteEmpresa" name="id_proyecto">
+                <select class="form-control" id="nombre_proyecto" name="id_proyecto">
                   {{ $nombre_proyecto }}
                 </select>
               </div>
@@ -41,11 +43,8 @@
 
               <div class="form-group">
                   <label for="sel1">Responsable:</label>
-                      <select class="form-control" id="seleccion_responsable" style="width:200px;">
-                          <option></option>
-                          <option>Empleado1</option>
-                          <option>Empleado2</option>
-                          <option>Empleado3</option>
+                      <select class="form-control" name="select_responsable" id="seleccion_responsable" style="width:200px;">
+                        {{ $nombre_empleados }}
                       </select>
                </div>
               <div class="row">
@@ -53,7 +52,7 @@
                       <div class="form-group">
                         <label for="recipient-name" class="form-control-label" style="width:140px;">Peso en el proyecto:</label>
                               <div class="input-group" style="width:120px; ">
-                                <input type="number" class="form-control" id="progresoModulo">
+                                <input type="number" class="form-control" id="progreso_modulo">
                                 <span class="input-group-addon" id="peso_proyecto">%</span>
                               </div>
                       </div>
@@ -61,21 +60,22 @@
                 <div class="col-4 col-sm-4">
                       <div class="form-group">
                           <label for="sel1">Nivel de importancia:</label>
-                              <select class="form-control" id="seleccion_responsable" style="width:100px;">
-                                  <option></option>
-                                  <option>Bajo</option>
-                                  <option>Medio</option>
-                                  <option>Alto</option>
+                              <select class="form-control" id="nivel_modulo" style="width:100px;" name="clas_modulo">
+                                  <option>BAJO</option>
+                                  <option>MEDIO</option>
+                                  <option>ALTO</option>
                               </select>
                       </div>
                 </div>
               </div> 
           </div>
-            </form>
-          </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
             <button type="submit" class="btn btn-success gradient">Guardar</button>
+          </div>
+
+            </form>
           </div>
         </div>
       </div>

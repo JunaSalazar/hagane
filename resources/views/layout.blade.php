@@ -39,10 +39,10 @@
 
     {{-- EMPIEZA TIMEPICKER --}}
 
-    <script src="{{ URL::asset('vue/dist/vue.min.js') }}"></script>
-    <script src="{{ URL::asset('vue2-timepicker/dist/vue2-timepicker.min.js') }}"></script>
+    <script src="{{ URL::asset('/vue/dist/vue.min.js') }}"></script>
+    <script src="{{ URL::asset('/vue2-timepicker/dist/vue2-timepicker.min.js') }}"></script>
 
-    <link href="{{ URL::asset('vue2-timepicker/dist/vue2-timepicker.min.css') }}" rel="stylesheet"></link>
+    <link href="{{ URL::asset('/vue2-timepicker/dist/vue2-timepicker.min.css') }}" rel="stylesheet"></link>
 
     {{-- TERMINA TIMEPICKER --}}
 <style>

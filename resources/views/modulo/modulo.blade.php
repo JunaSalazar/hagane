@@ -9,6 +9,8 @@
 
 <!-- Empieza Modal button (AGREGAR MODULOS A PROYECTOS)-->
     @component('modulo.registroModuloModal')
+
+<!-- /////////////////////////////////GUARDAR ID DE PROYECTOS//////////////////////////////////  -->
     @slot('nombre_proyecto')
         @foreach($proyectos as $p)
         <?php
@@ -24,7 +26,46 @@
         <option value = '{{ $id_proyecto }}'>{{ $nombre }}</option>
         @endforeach
     @endslot
+    
+<!-- /////////////////////////////////GUARDAR ID DE PROYECTOS//////////////////////////////////  -->
+
+<!-- /////////////////////////////////GUARDAR ID DE PROYECTOS//////////////////////////////////  -->
+
+    @slot('nombre_empleados')
+      @foreach($empleados as $e)
+        <?php
+        $nombre=substr($e->nombre,1);
+        $nombre = str_replace("}","",$nombre);
+        if((strcmp(substr($nombre,-1),'"'))==0){
+            $nombre=substr($nombre,1);
+            $nombre = str_replace('"','',$nombre);
+        }
+
+        $apellido_paterno=substr($e->apellido_paterno,1);
+        $apellido_paterno = str_replace("}","",$apellido_paterno);
+        if((strcmp(substr($apellido_paterno,-1),'"'))==0){
+            $apellido_paterno=substr($apellido_paterno,1);
+            $apellido_paterno = str_replace('"','',$apellido_paterno);
+        }
+
+        $apellido_materno=substr($e->apellido_materno,1);
+        $apellido_materno = str_replace("}","",$apellido_materno);
+        if((strcmp(substr($apellido_materno,-1),'"'))==0){
+            $apellido_materno=substr($apellido_materno,1);
+            $apellido_materno = str_replace('"','',$apellido_materno);
+        }
+
+        $nombre_completo = $nombre.' '.$apellido_paterno.' '.$apellido_materno;
+
+        $id_empleado=$e->id;
+        ?>
+        <option value = '{{ $id_empleado }}'>{{ $nombre_completo }}</option>
+        @endforeach
+    @endslot
+
+<!-- /////////////////////////////////GUARDAR ID DE PROYECTOS//////////////////////////////////  -->
     @endcomponent
+    
 <!-- Termina Modal button (AGREGAR MODULOS A PROYECTOS)-->
 
 
@@ -106,107 +147,28 @@
             </tr>
         </tfoot>
         <tbody>
-            <tr>
-                <td>Aplicación Móvil</td>
-                <td>MÓDULO 1</td>
-                <td>BAJO</td>
-                <td>Erick Castillo/Carlos Salazar</td>
-                <td>50%</td>
-                <td>
 
 
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>MÓDULO 2</td>
-                <td>MEDIO</td>
-                <td>Erick Castillo/Erick Valdez</td>
-                <td>20%</td>
+            @foreach($modulos as $m)
+          <tr>
+                <?php 
+                $nombre=substr($m->nombre,1);
+                $nombre = str_replace("}","",$nombre);
+                if((strcmp(substr($nombre,-1),'"'))==0){
+                  $nombre=substr($nombre,1);
+                  $nombre = str_replace('"','',$nombre);
+                }
+                ?>
+                <td>{{ $nombre }}</td>
                 <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
-
+                  <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
                 </td>
             </tr>
-            <tr>
-                <td></td>
-                <td>MÓDULO 3</td>
-                <td>ALTO</td>
-                <td>Erick Castillo/Erick Valdez</td>
-                <td>20%</td>
-                <td>
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
-
-
-                </td>
-            </tr>
-            <tr>
-                <td>Aplicación Web</td>
-                <td>MÓDULO 1</td>
-                <td>BAJO</td>
-                <td>Erick Castillo/Carlos Salazar</td>
-                <td>50%</td>
-                <td>
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
-
-
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>MÓDULO 2</td>
-                <td>MEDIO</td>
-                <td>Erick Castillo/Erick Valdez</td>
-                <td>20%</td>
-                <td>
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
-
-
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>MÓDULO 3</td>
-                <td>ALTO</td>
-                <td>Erick Castillo/Erick Valdez</td>
-                <td>20%</td>
-                <td>
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
-
-
-                </td>
-            </tr>
+            @endforeach
         </tbody>
 </table>      
 

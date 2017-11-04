@@ -68,26 +68,26 @@
               </div>
             </div>
 
-            <script>
-              $( ".mi_calendario" ).datepicker({
-              // Formato de la fecha
-              dateFormat: 'yy-mm-dd',
-              // Primer dia de la semana - lunes
-              firstDay: 1,
-              // Días largo traducido
-              dayNames: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
-              // Dias cortos traducido
-              dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
-              // Nombres largos de los meses traducido
-              monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ],
-              // Nombres cortos de los meses traducido 
-              monthNamesShort: [ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec" ],
-              // Al selecconar fecha, se escribe en el campo de texto
-              onSelect: function(dateText) { 
+                <script>
+                $( ".mi_calendario" ).datepicker({
+                // Formato de la fecha
+                dateFormat: 'yy-mm-dd',
+                // Primer dia de la semana - lunes
+                firstDay: 1,
+                // Días largo traducido
+                dayNames: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado" ],
+                // Dias cortos traducido
+                dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+                // Nombres largos de los meses traducido
+                monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ],
+                // Nombres cortos de los meses traducido 
+                monthNamesShort: [ "Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec" ],
+                // Al selecconar fecha, se escribe en el campo de texto
+                onSelect: function(dateText) { 
                 $('#fecha').val(dateText);
-              }
-            });
-          </script>
+                }
+                });
+                </script>
 
           <script>
             $( ".mi_calendario2" ).datepicker({
