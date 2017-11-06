@@ -14,12 +14,12 @@
               {{ csrf_field() }}
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Nombre</label>
-                <input type="text" class="form-control" name="nombre_empresa" minlength="1" maxlength="20">
+                <input type="text" class="form-control" name="nombre_empresa" minlength="1" maxlength="35" required="">
               </div>
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Razón Social</label>
-                <input type="text" class="form-control" name="razon_social" minlength="1" maxlength="20">
+                <input type="text" class="form-control" name="razon_social" minlength="1" maxlength="50">
               </div>
 
               <div class="form-group">
@@ -50,25 +50,54 @@
 
               <div class="half left cf">
               <label for="recipient-name" class="form-control-label">Ciudad</label>
-                <input type="text" class="form-control" name="ciudad_empresa" maxlength="20">
+                {{-- <input type="text" class="form-control" name="ciudad_empresa" maxlength="20"> --}}
+                <select name="ciudad_empresa" class="cities order-alpha form-control" id="cityId">
+                <option value="">Select la ciudad</option>
+                </select>
               </div>
               <div class="half right cf">
-                <label form="recipient-name" class="form-control-label">Estado</label>                
-                <select class="form-control" name="estado_empresa">
+                <label form="recipient-name" class="form-control-label">Estado</label> 
+                <select name="estado_empresa" class="states order-alpha form-control" id="stateId">
+                <option value="">Selecciona el estado</option>
+                </select>               
+                {{-- <select class="form-control" name="estado_empresa">
                   <option>Nuevo León</option>
                   <option>Coahuila</option>
                   <option>Tamaulipas</option>
-                </select>
+                </select> --}}
               </div>
 
               <div class="form-group">
                 <label form="recipient-name" class="form-control-label">País</label>
-                <select class="form-control" name="pais_empresa">
+                <select name="pais_empresa" class="countries order-alpha form-control" id="countryId">
+                <option value="">Selecciona el país</option>
+                </select>
+                
+               {{--  <select class="form-control" name="pais_empresa">
                   <option>México</option>
                   <option>Estados Unidos</option>
                   <option>Canadá</option>
-                </select>
+                </select> --}}
               </div>
+              <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+              <script src="//geodata.solutions/includes/countrystatecity.js"></script>
+              {{-- EL API PARA LOS DROP DOWN DE GEOLOCALIZACIÓN SE OBTUVO DE ESTE ENLACE:
+              https://www.geodata.solutions/?chronoform=listbuilder&event=submit --}}
+
+
+
+
+
+
+              
+
+
+
+
+
+
+
+
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
