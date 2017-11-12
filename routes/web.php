@@ -37,6 +37,12 @@ Route::get('/historial', 'HistorialController@index');
 
 Route::post('/historial/store', 'HistorialController@store');
 
+Auth::routes();
+
+Route::resource('gcalendar', 'gCalendarController');
+
+Route::get('oauth', ['as' => 'oauthCallback', 'uses' => 'gCalendarController@oauth']);
+
 Route::get('/recordatorio', function () {
     return view('recordatorio/recordatorio');
 });

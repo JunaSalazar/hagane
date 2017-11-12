@@ -2,10 +2,15 @@
 
 @section('content')
 
+<div id='calendario'>
+ <div id='calendar'></div>
+</div>
+ 
+
       <!-- FIN DE SECCIÓN DE PERFIL -->
 
     <!-- Empieza Modal button (Alta de cliente)-->
-    <button type="button" class="btn btn-success gradient"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom: 25px;">Registrar recordatorio</button>
+    {{-- <button type="button" class="btn btn-success gradient"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom: 25px;">Registrar recordatorio</button>
 
      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -13,7 +18,7 @@
           <div class="modal-header">
             <h3 class="modal-title" id="exampleModalLabel">Alta de empresa</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <!--<span aria-hidden="true">&times;</span>-->
+              COMENTARIO<span aria-hidden="true">&times;</span>COMENTARIO
             </button>
           </div>
           <div class="modal-body">
@@ -79,14 +84,14 @@
           modal.find('.modal-body input').val(recipient)
       })
 
-    </script>
+    </script> --}}
 
 
     <!-- Termina Modal button (Alta de cliente)-->
 
     <!-- -->
 
-<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+{{-- <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Evento</th>
@@ -117,10 +122,10 @@
                 <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                  <button type="button" class="btn btn-primary gradient"  COMENTARIO data-toggle="modal" COMENTARIO COMENTARIO data-target="#registroModulo" COMENTARIO data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
 
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
+                  COMENTARIO<span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>COMENTARIO
 
 
                 </td>
@@ -134,10 +139,10 @@
                 <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                  <button type="button" class="btn btn-primary gradient"  COMENTARIOdata-toggle="modal"COMENTARIO data-target="#registroModulo" COMENTARIOdata-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
 
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
+                  COMENTARIO<span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>COMENTARIO
 
 
                 </td>
@@ -151,10 +156,10 @@
                 <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 
-                  <button type="button" class="btn btn-primary gradient"  {{-- data-toggle="modal" --}} {{-- data-target="#registroModulo" --}} data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+                  <button type="button" class="btn btn-primary gradient"  COMENTARIO data-toggle="modal" COMENTARIO COMENTARIO data-target="#registroModulo" COMENTARIO data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
 
-                  {{-- <span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> --}}
+                  COMNTARIO<span class = "glyphicon glyphicon-info-sign" class='clickable' data-toggle="modal" data-target="#infoModal" aria-hidden="true"></span>  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>COMENTARIO
 
 
                 </td>
@@ -168,6 +173,6 @@
     $('#example').DataTable();
   } );
 
-</script>
+</script> --}}
 
 @stop

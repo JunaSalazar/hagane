@@ -84,13 +84,15 @@
                 // CAMPOS PARA CORREO************************************
 
                 // CAMPOS PARA TELEFONO************************************
-                $telefono=substr($c->telefono,1);
-                $telefono = str_replace("}","",$telefono);
-                if((strcmp(substr($telefono,-1),'"'))==0){
-                  $telefono=substr($telefono,1);
-                  $telefono = str_replace('"','',$telefono);
-                }
+                // $telefono=substr($c->telefono,1);
+                // $telefono = str_replace("}","",$telefono);
+                // if((strcmp(substr($telefono,-1),'"'))==0){
+                //   $telefono=substr($telefono,1);
+                //   $telefono = str_replace('"','',$telefono);
+                // }
                 // CAMPOS PARA TELEFONO************************************
+
+                $codigo='';
 
                 foreach($empresas as $e){
                     if($e->id == $c->id_empresa){
@@ -113,8 +115,18 @@
                 }
                 // CAMPOS PARA TIPO************************************
 
-
                 $nombre_completo = $nombre.' '.$ap.' '.$am;
+
+                $telefono_raw = $c->telefono;
+
+                $primera_parte = substr($telefono_raw, 1, 3);
+
+                $segunda_parte = substr($telefono_raw, 4, 3);
+
+                $tercera_parte = substr($telefono_raw, 7, 4);
+
+                $telefono = $primera_parte.'-'.$segunda_parte.'-'.$tercera_parte;
+
                 ?>
                 <td>{{ $nombre_completo }}</td>
                 <td>{{ $correo }}</td>

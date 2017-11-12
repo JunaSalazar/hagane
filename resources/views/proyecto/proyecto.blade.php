@@ -118,10 +118,37 @@
                   $nombre=substr($nombre,1);
                   $nombre = str_replace('"','',$nombre);
                 }
+
+                $fecha = $p->fechainicio;
+
+                $anio_inicial = substr($fecha, 0, 4);
+
+                $mes_inicial = substr($fecha, 5, 2);
+
+                $dia_inicial = substr($fecha, 8, 2);
+
+                $fecha_inicio = $dia_inicial.'/'.$mes_inicial.'/'.$anio_inicial;
+
+                $fecha = $p->fechafinal;
+
+                $anio_final = substr($fecha, 0, 4);
+
+                $mes_final = substr($fecha, 5, 2);
+
+                $dia_final = substr($fecha, 8, 2);
+
+                $fecha_final = $dia_final.'/'.$mes_final.'/'.$anio_final;
+
+                // $duracion_anio = $anio_final-$anio_inicial;
+
+                // $duracion_mes = $mes_final-$mes_inicial;
+
+                // $duracion_dia = $dia_final-$dia_inicial;
+
                 ?>
                 <td>{{ $nombre }}</td>
-                <td>{{ $p->fechainicio }}</td>
-                <td>{{ $p->fechafinal }}</td>
+                <td>{{ $fecha_inicio }}</td>
+                <td>{{ $fecha_final }}</td>
                 <td>{{ $p->duracion }}</td>
                 <?php
                 $cotizado=substr($p->cotizado,1);

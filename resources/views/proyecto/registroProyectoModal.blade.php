@@ -16,19 +16,19 @@
 
           <div class="form-group">
             <label for="recipient-name" class="form-control-label">Cliente:</label>
-            <select class="form-control" name="cliente_proyecto">
+            <select class="form-control" name="cliente_proyecto" required>
             {{ $nombre_clientes }}
             </select>
           </div>
 
           <div class="form-group">
             <label for="recipient-name" class="form-control-label">Nombre del proyecto</label>
-            <input type="text" class="form-control" id="usuarioCliente" maxlength="20" name="nombre_proyecto">
+            <input type="text" class="form-control" id="usuarioCliente" maxlength="20" name="nombre_proyecto" required>
           </div>
           <fieldset id = "cotizado">
           <p><b>¿Se ha cotizado?</b></p>
             <div class="radio" name="cotizado">
-              <label><input type="radio" name="cotizado" value = "SI">SI</label>
+              <label><input type="radio" name="cotizado" value = "SI" required>SI</label>
             </div>
             <div class="radio" name="cotizado">
               <label><input type="radio" name="cotizado" value = "NO">NO</label>
@@ -37,7 +37,7 @@
           <fieldset id = "entregado">
           <p><b>¿Se ha entregado?</b></p>
             <div class="radio" id="entregado">
-              <label><input type="radio" name="entregado" value = "SI">SI</label>
+              <label><input type="radio" name="entregado" value = "SI" required>SI</label>
             </div>
             <div class="radio">
               <label><input type="radio" name="entregado" value = "NO">NO</label>
@@ -49,7 +49,7 @@
                   <div class="controls">
                     <div class="form-group" style="width: 170px;" >
                       <label for="recipient-name" class="form-control-label">Fecha de inicialización:</label>
-                      <input id="mi_calendario" type="text" class="mi_calendario form-control" name="fechaInicio" />
+                      <input id="mi_calendario" type="text" class="mi_calendario form-control" name="fechaInicio" required />
                       <label for="mi_calendario" class="input-group-addon generic_btn"><i class="fa fa-calendar" aria-hidden="true"></i></label>
                     </div>
                   </div>
@@ -60,7 +60,7 @@
                   <div class="controls">
                     <div class="form-group" style="width: 170px;" >
                       <label for="recipient-name" class="form-control-label">Fecha de finalización:</label>
-                      <input id="mi_calendario2" type="text" class="mi_calendario form-control" name="fechaFinal" />
+                      <input id="mi_calendario2" type="text" class="mi_calendario form-control" name="fechaFinal" required />
                       <label for="mi_calendario2" class="input-group-addon generic_btn"><i class="fa fa-calendar" aria-hidden="true"></i></label>
                     </div>
                   </div>
@@ -71,7 +71,7 @@
                 <script>
                 $( ".mi_calendario" ).datepicker({
                 // Formato de la fecha
-                dateFormat: 'yy-mm-dd',
+                dateFormat: 'dd/mm/yy',
                 // Primer dia de la semana - lunes
                 firstDay: 1,
                 // Días largo traducido
@@ -92,7 +92,7 @@
           <script>
             $( ".mi_calendario2" ).datepicker({
             // Formato de la fecha
-            dateFormat: 'yy-mm-dd',
+            dateFormat: 'dd/mm/yy',
             // Primer dia de la semana - lunes
             firstDay: 1,
             // Días largo traducido

@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "google/apiclient": "dev-master",
         "illuminate/html": "^5.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
