@@ -21,7 +21,7 @@ class HistorialController extends Controller
         
         $contactos = Historial::all();
 
-        return view('/historial/historial', compact('contactos', 'clientes'));
+        return view('/empleado/historial/historial', compact('contactos', 'clientes'));
 
     }
 

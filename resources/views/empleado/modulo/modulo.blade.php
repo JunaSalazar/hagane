@@ -8,7 +8,7 @@
 
 
 <!-- Empieza Modal button (AGREGAR MODULOS A PROYECTOS)-->
-    @component('modulo.registroModuloModal')
+    @component('empleado.modulo.registroModuloModal')
 
 <!-- /////////////////////////////////GUARDAR ID DE PROYECTOS//////////////////////////////////  -->
     @slot('nombre_proyecto')

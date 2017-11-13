@@ -4,7 +4,7 @@
 
     <!-- Empieza Modal button (Alta de cliente)-->
     
-    @component('cliente.registroClienteModal')
+    @component('empleado.cliente.registroClienteModal')
         @slot('empresas')
             @foreach($empresas as $e)
                 <?php

@@ -19,7 +19,7 @@ class ProyectoClienteController extends Controller
 
         $proyectos = DB::table('proyecto')->get();
 
-        return view('/proyecto_cliente/proyecto_cliente', compact('proyectos','clientes'));
+        return view('/empleado/proyecto_cliente/proyecto_cliente', compact('proyectos','clientes'));
     }
 
     /**

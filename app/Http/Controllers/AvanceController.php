@@ -23,7 +23,7 @@ class AvanceController extends Controller
 
         $proyectos = DB::table("proyecto")->pluck("nombre","id");
         
-        return view('/avance/avance',compact('avances','proyectos'));
+        return view('/empleado/avance/avance',compact('avances','proyectos'));
     }
 
     /**

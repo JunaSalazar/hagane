@@ -21,7 +21,7 @@ class ClienteController extends Controller
         
         $clientes = Cliente::all();
 
-        return view('/cliente/cliente', compact('clientes', 'empresas'));
+        return view('/empleado/cliente/cliente', compact('clientes', 'empresas'));
         
     }
 

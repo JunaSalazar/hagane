@@ -18,7 +18,7 @@ class EmpresaController extends Controller
         
         $empresas = DB::table('empresa')->get();
 
-        return view('/empresa/empresa', ['empresas' => $empresas]);
+        return view('/empleado/empresa/empresa', ['empresas' => $empresas]);
     }
 
     /**

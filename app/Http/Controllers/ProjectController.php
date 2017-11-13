@@ -20,7 +20,7 @@ class ProjectController extends Controller
 
         $proyectos = DB::table('proyecto')->get();
 
-        return view('/proyecto/proyecto', compact('proyectos','clientes'));
+        return view('/empleado/proyecto/proyecto', compact('proyectos','clientes'));
     }
 
     public function store(Request $request)

@@ -7,7 +7,7 @@
       <!-- FIN DE SECCIÓN DE PERFIL -->
 
     <!-- Empieza Modal button (Alta de cliente)-->
-    @component('historial.registroHistorialModal')
+    @component('empleado.historial.registroHistorialModal')
     @slot('nombre_clientes')
         @foreach($clientes as $cli)
         <?php

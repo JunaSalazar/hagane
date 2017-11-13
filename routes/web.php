@@ -11,6 +11,8 @@
 |
 */
 
+// *********************POR PARTE DEL EMPLEADO******************************************
+
 Route::get('/proyecto', 'ProjectController@index');
 
 Route::post('/proyecto/store', 'ProjectController@store');
@@ -37,14 +39,8 @@ Route::get('/historial', 'HistorialController@index');
 
 Route::post('/historial/store', 'HistorialController@store');
 
-Auth::routes();
-
-Route::resource('gcalendar', 'gCalendarController');
-
-Route::get('oauth', ['as' => 'oauthCallback', 'uses' => 'gCalendarController@oauth']);
-
 Route::get('/recordatorio', function () {
-    return view('recordatorio/recordatorio');
+    return view('/empleado/recordatorio/recordatorio');
 });
 
 Route::get('/time', function () {
@@ -52,11 +48,9 @@ Route::get('/time', function () {
 });
 
 
-
-
 Route::get('/progreso', function () {
     return view('progreso/progreso');
 });
 
-
+// *********************POR PARTE DEL EMPLEADO******************************************
 

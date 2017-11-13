@@ -6,7 +6,7 @@
 
 
 <!-- Empieza Modal button (AGREGAR MODULOS A PROYECTOS)-->
-    @component('avance.registroAvanceModal')
+    @component('empleado.avance.registroAvanceModal')
     @slot('relacion_subcategory')
 
                   <div class="form-group">

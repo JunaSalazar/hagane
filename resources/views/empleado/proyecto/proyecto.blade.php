@@ -4,7 +4,7 @@
 
     {{-- ****************************************************************************************** --}}
     <!-- Empieza Modal button (Alta de proyecto)-->
-    @component('proyecto.registroProyectoModal')
+    @component('empleado.proyecto.registroProyectoModal')
       @slot('nombre_clientes')
         @foreach($clientes as $c)
         <?php

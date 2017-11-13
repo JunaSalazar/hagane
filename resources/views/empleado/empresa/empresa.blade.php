@@ -4,7 +4,7 @@
 
     <!-- Empieza Modal button (Alta de cliente)-->
 
-    @component('empresa.registroEmpresaModal')
+    @component('empleado.empresa.registroEmpresaModal')
     @endcomponent
 
     <!-- Termina Modal button (Alta de cliente)-->

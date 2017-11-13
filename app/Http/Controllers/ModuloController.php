@@ -23,7 +23,7 @@ class ModuloController extends Controller
 
         $empleados = DB::table('empleado')->get();
 
-        return view('/modulo/modulo', compact('proyectos','modulos','empleados'));
+        return view('/empleado/modulo/modulo', compact('proyectos','modulos','empleados'));
     }
 
     /**
