@@ -2,24 +2,32 @@
 
 @section('content')
 
+{{-- @component('empleado.recordatorio.registroEventoModal')
+@endcomponent --}}
+
 <div id='calendario'>
  <div id='calendar'></div>
 </div>
 <script>
+
+// *********************************BUENOBUENOBUENOBUENO******************************************
   $(document).ready(function() {
     $('#calendar').fullCalendar({
 
         header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,listYear'
+        right: 'month,agendaWeek,agendaDay,listYear'
         },
 
         googleCalendarApiKey: 'AIzaSyCzPVV9A8i_UOUXyKmPTC4krE9hyvF26vI',
 
         events: {
-            googleCalendarId: 'anillo94@live.com.mx'
+            googleCalendarId: 'anillo94@live.com.mx',
+            className: 'gcalevent'
         },
+
+        select: true,
 
       eventClick: function(event) {
         // opens events in a popup window
@@ -31,11 +39,9 @@
         $('#loading').toggle(bool);
       }
 
-
-
     });
 });
-
+// *********************************BUENOBUENOBUENOBUENO******************************************
 
 // function doRequest(options, printResult) {
 //     var x = new XMLHttpRequest();
@@ -194,6 +200,12 @@
   // });
 
 </script>
+<script src="{{ URL::asset('vendor/fullcalendar/lib/jquery.min.js') }}"></script>
+<script src="{{ URL::asset('vendor/fullcalendar/lib/moment.min.js') }}"></script>
+<script src="{{ URL::asset('vendor/fullcalendar/fullcalendar.min.js') }}"></script>
+<script src="{{ URL::asset('vendor/fullcalendar/locale/es.js') }}"></script>
+<script src="{{ URL::asset('js/app.js') }}"></script>
+<script type='text/javascript' src="{{ URL::asset('vendor/fullcalendar/gcal.js') }}"></script>
 {{-- <script type="text/javascript" src="{{ URL::asset('vendor/fullcalendar/gcal.js') }}">
   $(document).ready(function() {
     $('#calendar').fullCalendar({

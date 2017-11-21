@@ -148,7 +148,7 @@
         </tfoot>
         <tbody>
 
-
+            
 
             @foreach($modulos as $m)
           <tr>

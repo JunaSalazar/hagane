@@ -56,9 +56,9 @@ class ClienteController extends Controller
 
         $cliente->id_empresa = $request->empresa_cliente;
 
-        $cliente->contrasenia = '{ABCD}';
+        $cliente->password = '{ABCD}';
 
-        $cliente->correo = '{'.$request->correo_cliente.'}';
+        $cliente->email = '{'.$request->correo_cliente.'}';
 
         $cliente->telefono = '{'.$request->telefono_cliente.'}';
 

@@ -52,6 +52,9 @@
               <div class="radio" name="tipo">
                 <label><input type="radio" name="tipo" value ="PROSPECTO" required>PROSPECTO</label>
               </div>
+              <div class="radio" name="tipo">
+                <label><input type="radio" name="tipo" value ="CONFLICTO" required>CONFLICTO</label>
+              </div>
               </fieldset>
 
               <div class="modal-footer">

@@ -75,9 +75,22 @@
 
             @foreach($relacion as $c)
           <tr>
-            <?php 
-                $fecha=$c->fecha;
+            <?php
+            // **************************************************************************************************************
+            // ****************SE ACOMODA LA FECHA PARA DESPLEGARLA EN NUESTRO FORMATO************************************
+            // **************************************************************************************************************
+                $fecha = $c->fecha;
 
+                $anio_inicial = substr($fecha, 0, 4);
+
+                $mes_inicial = substr($fecha, 5, 2);
+
+                $dia_inicial = substr($fecha, 8, 2);
+
+                $fecha_despliegue = $dia_inicial.'/'.$mes_inicial.'/'.$anio_inicial;
+            // **************************************************************************************************************
+            // ****************SE ACOMODA LA FECHA PARA DESPLEGARLA EN NUESTRO FORMATO************************************
+            // **************************************************************************************************************
                 $hora=substr($c->hora,1);
                 $hora = str_replace("}","",$hora);
                 if((strcmp(substr($hora,-1),'"'))==0){
@@ -93,7 +106,7 @@
                 }
 
                 ?>
-                <td>{{ $fecha }}</td>
+                <td>{{ $fecha_despliegue }}</td>
                 <td>{{ $hora }}</td>
                 <td>{{ $cliente }}</td>
                 <td>{{ $c->comentario }}</td>

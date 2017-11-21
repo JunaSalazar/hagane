@@ -41,7 +41,6 @@ class ProjectController extends Controller
 // ****************NOMBRE DEL PROYECTO********************
         $proyecto->fechainicio = $request->fechaInicio;
         $proyecto->fechafinal = $request->fechaFinal;
-        $proyecto->duracion = '3';
 // ****************COTIZADO DEL PROYECTO********************
         $proyecto->cotizado = $inicio . $request->cotizado . $final;
 // ****************COTIZADO DEL PROYECTO********************

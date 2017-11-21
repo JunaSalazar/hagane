@@ -165,7 +165,7 @@
             <tr>
                 <th>Nombre de proyecto</th>
                 <th>Fecha de inicio</th>
-                <th>Fecha final</th>
+                <th>Fecha de entrega aproximada</th>
                 <th>Progreso por módulo</th>
                 <th>Progreso total</th>
             </tr>
@@ -174,7 +174,7 @@
             <tr>
                 <th>Nombre de proyecto</th>
                 <th>Fecha de inicio</th>
-                <th>Fecha final</th>
+                <th>Fecha de entrega aproximada</th>
                 <th>Progreso por módulo</th>
                 <th>Progreso total</th>
             </tr>

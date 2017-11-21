@@ -72,10 +72,15 @@
                   $am=substr($am,1);
                   $am = str_replace('"','',$am);
                 }
+
+                // MAYUSCULAS
+                $nombre=ucfirst($nombre);
+                $ap=ucfirst($ap);
+                $am=ucfirst($am);
                 // CAMPOS PARA NOMBRE COMPLETO************************************
 
                 // CAMPOS PARA CORREO************************************
-                $correo=substr($c->correo,1);
+                $correo=substr($c->email,1);
                 $correo = str_replace("}","",$correo);
                 if((strcmp(substr($correo,-1),'"'))==0){
                   $correo=substr($correo,1);

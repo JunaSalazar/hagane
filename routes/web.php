@@ -12,6 +12,15 @@
 */
 
 // *********************POR PARTE DEL EMPLEADO******************************************
+Route::get('/login', function () {
+    return view('/auth/login');
+});
+
+Auth::routes();
+
+// Route::post('/login', 'Auth\LoginController@loginNameOrEmail');
+
+Route::get('/empleado', 'HomeEmployeeController@index');
 
 Route::get('/proyecto', 'ProjectController@index');
 
@@ -43,14 +52,20 @@ Route::get('/recordatorio', function () {
     return view('/empleado/recordatorio/recordatorio');
 });
 
+Route::post('/recordatorio/store', 'RecordatorioController@store');
+
 Route::get('/time', function () {
     return view('timepicker');
 });
 
 
 Route::get('/progreso', function () {
-    return view('progreso/progreso');
+    return view('/empleado/progreso/progreso');
 });
 
 // *********************POR PARTE DEL EMPLEADO******************************************
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

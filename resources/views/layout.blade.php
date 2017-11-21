@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hagane</title>
-    <link rel="shortcut icon" type="image/png" href="/img/Simbolo-FondoTransparente.png"/>
+    <link rel="shortcut icon" type="image/png" href="/img/iconImage.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap2.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
@@ -107,7 +107,7 @@ div.scroll {
         <li class=""><a href="{{ url('empresa') }}">Empresas<span class="sr-only">(current)</span></a></li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Cliente</span><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Clientes</span><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('cliente') }}">Ver clientes</a></li>
             <li><a href="{{ url('proyecto_cliente') }}">Clientes y sus proyectos</a></li>
@@ -115,7 +115,7 @@ div.scroll {
         </li>
 
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Proyecto</span><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Proyectos</span><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('proyecto') }}">Ver proyectos</a></li>
             <li><a href="{{ url('modulo') }}">Módulos</a></li>
@@ -124,7 +124,7 @@ div.scroll {
           </ul>
         </li>
 
-        <li class=""><a href="{{ url('historial') }}">Historial de contacto<span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="{{ url('historial') }}">Historial de contactos<span class="sr-only">(current)</span></a></li>
 
         <li class=""><a href="{{ url('recordatorio') }}">Recordatorios<span class="sr-only">(current)</span></a></li>
 
@@ -157,10 +157,4 @@ div.scroll {
 
     
 </body>
-<script src="{{ URL::asset('vendor/fullcalendar/lib/jquery.min.js') }}"></script>
-<script src="{{ URL::asset('vendor/fullcalendar/lib/moment.min.js') }}"></script>
-<script src="{{ URL::asset('vendor/fullcalendar/fullcalendar.min.js') }}"></script>
-<script src="{{ URL::asset('vendor/fullcalendar/locale/es.js') }}"></script>
-<script src="{{ URL::asset('js/app.js') }}"></script>
-<script type='text/javascript' src="{{ URL::asset('vendor/fullcalendar/gcal.js') }}"></script>
 </html>

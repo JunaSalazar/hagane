@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Google_Event;
-use Google_Client;
-use Google_Service_Calendar;
-use Google_Service_Calendar_Event;
-use Google_Service_Calendar_EventDateTime;
 
-class RecordatorioController extends Controller
+class HomeCustomerController extends Controller
 {
+
+
+    public function _construct(){
+        $this->middleware('auth:users');
+    }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = \Hash::make($password);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,19 +45,7 @@ class RecordatorioController extends Controller
      */
     public function store(Request $request)
     {
-        $calendarId = 'anillo94@live.com.mx';
-            $event = new Google_Service_Calendar_Event([
-                'summary' => 'EJEMPLO ASDF',
-                'description' => 'PRUEBA DE QUE ESTA MADRE JALA',
-                'start' => ['dateTime' => '2017/11/28T01:00:00-07:00'],
-                'end' => ['dateTime' => '2017/11/29T01:00:00-07:00'],
-                'reminders' => ['useDefault' => true],
-            ]);
-            $results = $service->events->insert($calendarId, $event);
-            if (!$results) {
-                return response()->json(['status' => 'error', 'message' => 'Something went wrong']);
-            }
-            return response()->json(['status' => 'success', 'message' => 'Event Created']);
+        //
     }
 
     /**

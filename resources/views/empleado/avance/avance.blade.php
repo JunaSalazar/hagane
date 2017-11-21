@@ -11,7 +11,8 @@
 
                   <div class="form-group">
                   <label for="recipient-name" class="form-control-label">Proyecto</label>
-                  <select class="form-control" id="proyecto" name="id_proyecto">
+                  <select class="form-control" id="proyecto" name="id_proyecto" required>
+                    <option value = ''></option>
                   @foreach($proyectos as $key => $value)
                   <?php 
                   $nombre=substr($value,1);

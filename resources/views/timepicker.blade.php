@@ -2,10 +2,12 @@
 
 @section('content')
 
-<p>Google Calendar API Quickstart</p>
+<time-picker></time-picker>
 
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize-button" style="display: none;">Authorize</button>
+{{-- <p>Google Calendar API Quickstart</p> --}}
+
+    {{-- Add buttons to initiate auth sequence and sign out --}}
+    {{-- <button id="authorize-button" style="display: none;">Authorize</button>
     <button id="signout-button" style="display: none;">Sign Out</button>
 
     <pre id="content"></pre>
@@ -132,7 +134,7 @@
     <script async defer src="https://apis.google.com/js/api.js"
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+    </script> --}}
 
 {{-- <timepicker></timepicker>
 

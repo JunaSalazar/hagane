@@ -17,7 +17,7 @@
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Nombre del avance</label>
-                <input type="text" class="form-control" name="nombre_avance">
+                <input type="text" class="form-control" name="nombre_avance" required>
               </div>
 
               <div class="form-group">
@@ -27,9 +27,18 @@
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Imagen de avance</label>
-                <input type="file" id="imagen_avance" name="image"
-          accept=".jpg, .jpeg, .png">
+                <input type="file" id="imagen_avance" class="maxsize" name="image"  accept=".jpg, .jpeg, .png">
               </div>
+              {{-- SE TIENE COMO LÍMITE 2MB PORQUE EN EL PHP.INI EN LA PARTE DE upload_max_file ASÍ LO MARCA --}}
+              <script>
+                var uploadField = document.getElementById("imagen_avance");
+                uploadField.onchange = function() {
+                if(this.files[0].size > 2097152){
+                alert('El archivo es mayor a 2MB. Elige un archivo con menor peso porfavor')
+                this.value = "";
+                };
+                };
+              </script>
 
               <!-- Caja de comentarios
 

@@ -19,7 +19,7 @@
                   {{ $nombre_proyecto }}
                 </select>
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Cantidad de módulos:</label>
                 <button type="button" class="btn btn-default" style="margin-left: 10px; width: 35px;">-</button>
                 <label for="recipient-name" class="form-control-label">1</label>
@@ -34,7 +34,7 @@
                 <button type="button" class="btn btn-default" style="margin-left: 10px; width: 35px;">-</button>
                 <label for="recipient-name" class="form-control-label">1</label>
                 <button type="button" class="btn btn-default" style="width: 35px;">+</button>
-              </div>
+              </div> --}}
 
               <div class="form-group">
                 <label for="recipient-name" class="form-control-label">Nombre del módulo</label>
@@ -50,7 +50,7 @@
               <div class="row">
                 <div class="col-8 col-sm-4">
                       <div class="form-group">
-                        <label for="recipient-name" class="form-control-label" style="width:140px;">Peso en el proyecto:</label>
+                        <label for="recipient-name" class="form-control-label" style="width:140px;">Progreso:</label>
                               <div class="input-group" style="width:120px; ">
                                 <input type="number" class="form-control" id="progreso_modulo">
                                 <span class="input-group-addon" id="peso_proyecto">%</span>

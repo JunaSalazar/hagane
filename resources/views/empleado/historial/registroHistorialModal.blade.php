@@ -63,7 +63,7 @@
     <script>
                 $( ".mi_calendario" ).datepicker({
                 // Formato de la fecha
-                dateFormat: 'yy-mm-dd',
+                dateFormat: 'dd/mm/yy',
                 // Primer dia de la semana - lunes
                 firstDay: 1,
                 // Días largo traducido

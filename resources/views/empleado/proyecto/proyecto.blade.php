@@ -89,7 +89,7 @@
             <tr>
                 <th>Nombre</th>
                 <th>Feha de inicio</th>
-                <th>Feha final</th>
+                <th>Feha de entrega aproximada</th>
                 <th>Duración</th>
                 <th>Cotizado</th>
                 <th>Entregado</th>
@@ -100,7 +100,7 @@
             <tr>
                 <th>Nombre</th>
                 <th>Feha de inicio</th>
-                <th>Feha final</th>
+                <th>Feha de entrega aproximada</th>
                 <th>Duración</th>
                 <th>Cotizado</th>
                 <th>Entregado</th>
@@ -119,37 +119,51 @@
                   $nombre = str_replace('"','',$nombre);
                 }
 
-                $fecha = $p->fechainicio;
+                $fecha_inicial_db = $p->fechainicio;
 
-                $anio_inicial = substr($fecha, 0, 4);
+                $anio_inicial = substr($fecha_inicial_db, 0, 4);
 
-                $mes_inicial = substr($fecha, 5, 2);
+                $mes_inicial = substr($fecha_inicial_db, 5, 2);
 
-                $dia_inicial = substr($fecha, 8, 2);
+                $dia_inicial = substr($fecha_inicial_db, 8, 2);
 
                 $fecha_inicio = $dia_inicial.'/'.$mes_inicial.'/'.$anio_inicial;
 
-                $fecha = $p->fechafinal;
+                $fecha_final_db = $p->fechafinal;
 
-                $anio_final = substr($fecha, 0, 4);
+                $anio_final = substr($fecha_final_db, 0, 4);
 
-                $mes_final = substr($fecha, 5, 2);
+                $mes_final = substr($fecha_final_db, 5, 2);
 
-                $dia_final = substr($fecha, 8, 2);
+                $dia_final = substr($fecha_final_db, 8, 2);
 
                 $fecha_final = $dia_final.'/'.$mes_final.'/'.$anio_final;
 
-                // $duracion_anio = $anio_final-$anio_inicial;
+                // ***************************************************************************************************
+                // ***********************BLOQUE DONDE SE CALCULA LA DURACIÓN DEL PROYECTO***************************
+                // *****************************************************************************************************
+                $segundos = strtotime($fecha_final_db) - strtotime($fecha_inicial_db);
 
-                // $duracion_mes = $mes_final-$mes_inicial;
+                $dias = (($segundos/60)/60)/24;
 
-                // $duracion_dia = $dia_final-$dia_inicial;
-
+                  if($dias>=30){
+                    $dtF = new DateTime("@0");
+                    $dtT = new DateTime("@$segundos");
+                    $duracion = $dtF->diff($dtT)->format('%m meses');
+                  }
+                  else{
+                    $dtF = new DateTime("@0");
+                    $dtT = new DateTime("@$segundos");
+                    $duracion = $dtF->diff($dtT)->format('%a dias');
+                  }
+                // ***************************************************************************************************
+                // ***********************BLOQUE DONDE SE CALCULA LA DURACIÓN DEL PROYECTO***************************
+                // *****************************************************************************************************
                 ?>
                 <td>{{ $nombre }}</td>
                 <td>{{ $fecha_inicio }}</td>
                 <td>{{ $fecha_final }}</td>
-                <td>{{ $p->duracion }}</td>
+                <td>{{ $duracion }}</td>
                 <?php
                 $cotizado=substr($p->cotizado,1);
                 $cotizado = str_replace("}","",$cotizado);
