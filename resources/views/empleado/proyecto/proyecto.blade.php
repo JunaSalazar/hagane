@@ -8,26 +8,11 @@
       @slot('nombre_clientes')
         @foreach($clientes as $c)
         <?php
-        $nombre=substr($c->nombre,1);
-        $nombre = str_replace("}","",$nombre);
-        if((strcmp(substr($nombre,-1),'"'))==0){
-            $nombre=substr($nombre,1);
-            $nombre = str_replace('"','',$nombre);
-        }
+        $nombre=$c->nombre;
+        
+        $a_paterno=$c->apellido_paterno;
 
-        $a_paterno=substr($c->apellido_paterno,1);
-        $a_paterno = str_replace("}","",$a_paterno);
-        if((strcmp(substr($a_paterno,-1),'"'))==0){
-            $a_paterno=substr($a_paterno,1);
-            $a_paterno = str_replace('"','',$a_paterno);
-        }
-
-        $a_materno=substr($c->apellido_materno,1);
-        $a_materno = str_replace("}","",$a_materno);
-        if((strcmp(substr($a_materno,-1),'"'))==0){
-            $a_materno=substr($a_materno,1);
-            $a_materno = str_replace('"','',$a_materno);
-        }
+        $a_materno=$c->apellido_materno;
 
         $nombre_completo=$nombre.' '.$a_paterno.' '.$a_materno;
 
@@ -91,8 +76,7 @@
                 <th>Feha de inicio</th>
                 <th>Feha de entrega aproximada</th>
                 <th>Duración</th>
-                <th>Cotizado</th>
-                <th>Entregado</th>
+                <th>Estatus</th>
                 <th></th>
             </tr>
         </thead>
@@ -102,8 +86,7 @@
                 <th>Feha de inicio</th>
                 <th>Feha de entrega aproximada</th>
                 <th>Duración</th>
-                <th>Cotizado</th>
-                <th>Entregado</th>
+                <th>Estatus</th>
                 <th></th>
             </tr>
         </tfoot>
@@ -156,6 +139,8 @@
                     $dtT = new DateTime("@$segundos");
                     $duracion = $dtF->diff($dtT)->format('%a dias');
                   }
+
+                $estatus = $p->estatus;
                 // ***************************************************************************************************
                 // ***********************BLOQUE DONDE SE CALCULA LA DURACIÓN DEL PROYECTO***************************
                 // *****************************************************************************************************
@@ -164,24 +149,7 @@
                 <td>{{ $fecha_inicio }}</td>
                 <td>{{ $fecha_final }}</td>
                 <td>{{ $duracion }}</td>
-                <?php
-                $cotizado=substr($p->cotizado,1);
-                $cotizado = str_replace("}","",$cotizado);
-                if((strcmp(substr($cotizado,-1),'"'))==0){
-                  $cotizado=substr($cotizado,1);
-                  $cotizado = str_replace('"','',$cotizado);
-                }
-                ?>
-                <td>{{ $cotizado }}</td>
-                <?php 
-                $entregado=substr($p->entregado,1);
-                $entregado = str_replace("}","",$entregado);
-                if((strcmp(substr($entregado,-1),'"'))==0){
-                  $entregado=substr($entregado,1);
-                  $entregado = str_replace('"','',$entregado);
-                }
-                ?>
-                <td>{{ $entregado }}</td>
+                <td>{{ $estatus }}</td>
                 <td>
                   <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
 

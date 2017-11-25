@@ -52,7 +52,7 @@ class AvanceController extends Controller
 
         $avance->id_modulo = $request->id_modulo;
 
-        $avance->nombre = '{'.$request->nombre_avance.'}';
+        $avance->nombre = $request->nombre_avance;
 
         
 

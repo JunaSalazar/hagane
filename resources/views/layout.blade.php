@@ -139,6 +139,19 @@ div.scroll {
             <li><a href="#">Perfil</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Cerrar sesión</a></li>
+{{-- EXTRAEXTRAEXTRAEXTRA --}}
+            <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                    {{-- EXTRAEXTRAEXTRAEXTRA --}}
           </ul>
         </li>
       </ul>

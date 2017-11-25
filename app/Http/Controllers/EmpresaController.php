@@ -43,27 +43,27 @@ class EmpresaController extends Controller
 
         /*Nombre de la tabla->atributo = $request->NOMBRE DEL CAMPO*/  
 
-        $empresa->nombre = '{'.$request->nombre_empresa.'}';
+        $empresa->nombre = $request->nombre_empresa;
 
-        $empresa->razon_social = '{'.$request->razon_social.'}';
+        $empresa->razon_social = $request->razon_social;
 
-        $empresa->rfc = '{'.$request->rfc.'}';
+        $empresa->rfc = $request->rfc;
 
-        $empresa->calle = '{'.$request->calle_empresa.'}';
+        $empresa->calle = $request->calle_empresa;
 
-        $numero = '{'.$request->numero_empresa.'}';
+        $numero = $request->numero_empresa;
 
         $empresa->numero =  $numero;       
 
-        $empresa->colonia = '{'.$request->colonia_empresa.'}';
+        $empresa->colonia = $request->colonia_empresa;
 
-        $empresa->codigo_postal  = '{'.$request->codigo_postal.'}';
+        $empresa->codigo_postal  = $request->codigo_postal;
 
-        $empresa->ciudad  = '{'.$request->ciudad_empresa.'}';
+        $empresa->ciudad  = $request->ciudad_empresa;
 
-        $empresa->estado  = '{'.$request->estado_empresa.'}';
+        $empresa->estado  = $request->estado_empresa;
 
-        $empresa->pais  = '{'.$request->pais_empresa.'}';
+        $empresa->pais  = $request->pais_empresa;
 
         $empresa->save();
 
@@ -79,7 +79,10 @@ class EmpresaController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $task = Empresa::findOrFail($id);
+
+        return view('empleado.empresa.datosEmpresa')->withTask($task);
     }
 
     /**

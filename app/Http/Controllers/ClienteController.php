@@ -48,21 +48,21 @@ class ClienteController extends Controller
 
         /*Nombre de la tabla->atributo = $request->NOMBRE DEL CAMPO*/
 
-        $cliente->nombre = '{'.$request->nombre_cliente.'}';
+        $cliente->nombre = $request->nombre_cliente;
 
-        $cliente->apellido_paterno = '{'.$request->apellido_paterno.'}';
+        $cliente->apellido_paterno = $request->apellido_paterno;
 
-        $cliente->apellido_materno = '{'.$request->apellido_materno.'}';
+        $cliente->apellido_materno = $request->apellido_materno;
 
         $cliente->id_empresa = $request->empresa_cliente;
 
-        $cliente->password = '{ABCD}';
+        $cliente->password = 'ABCD';
 
-        $cliente->email = '{'.$request->correo_cliente.'}';
+        $cliente->email = $request->correo_cliente;
 
-        $cliente->telefono = '{'.$request->telefono_cliente.'}';
+        $cliente->telefono = $request->telefono_cliente;
 
-        $cliente->tipo_cliente = '{'.$request->tipo.'}';
+        $cliente->tipo_cliente = $request->tipo;
 
         $cliente->save();
 

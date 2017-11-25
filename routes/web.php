@@ -12,8 +12,23 @@
 */
 
 // *********************POR PARTE DEL EMPLEADO******************************************
+// BUENO*************************************************************************
+// BUENO*************************************************************************
+// BUENO*************************************************************************
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+// BUENO*************************************************************************
+// BUENO*************************************************************************
+// BUENO*************************************************************************
 Route::get('/login', function () {
     return view('/auth/login');
+});
+
+Route::get('/register', function () {
+    return view('/auth/register');
 });
 
 Auth::routes();
@@ -26,9 +41,21 @@ Route::get('/proyecto', 'ProjectController@index');
 
 Route::post('/proyecto/store', 'ProjectController@store');
 
+// ********************************************************************
+// ************************RUTAS DE EMPRESA****************************
+// ********************************************************************
+
 Route::get('/empresa', 'EmpresaController@index');
 
 Route::post('/empresa/store', 'EmpresaController@store');
+
+Route::get('/empresa/{id}/show', 'EmpresaController@show');
+
+// ********************************************************************
+// ************************RUTAS DE EMPRESA****************************
+// ********************************************************************
+
+
 
 Route::get('/cliente', 'ClienteController@index');
 
@@ -66,6 +93,4 @@ Route::get('/progreso', function () {
 // *********************POR PARTE DEL EMPLEADO******************************************
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
