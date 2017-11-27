@@ -8,12 +8,7 @@
         @slot('empresas')
             @foreach($empresas as $e)
                 <?php
-                $nombre=substr($e->nombre,1);
-                $nombre = str_replace("}","",$nombre);
-                if((strcmp(substr($nombre,-1),'"'))==0){
-                $nombre=substr($nombre,1);
-                $nombre = str_replace('"','',$nombre);
-                }
+                $nombre=$e->nombre;
 
                 $id=$e->id;
                 ?>
@@ -52,26 +47,11 @@
           <tr>
                 <?php 
                 // CAMPOS PARA NOMBRE COMPLETO**********************************
-                $nombre=substr($c->nombre,1);
-                $nombre = str_replace("}","",$nombre);
-                if((strcmp(substr($nombre,-1),'"'))==0){
-                  $nombre=substr($nombre,1);
-                  $nombre = str_replace('"','',$nombre);
-                }
+                $nombre=$c->nombre;
 
-                $ap=substr($c->apellido_paterno,1);
-                $ap = str_replace("}","",$ap);
-                if((strcmp(substr($ap,-1),'"'))==0){
-                  $ap=substr($ap,1);
-                  $ap = str_replace('"','',$ap);
-                }
+                $ap=$c->apellido_paterno;
 
-                $am=substr($c->apellido_materno,1);
-                $am = str_replace("}","",$am);
-                if((strcmp(substr($am,-1),'"'))==0){
-                  $am=substr($am,1);
-                  $am = str_replace('"','',$am);
-                }
+                $am=$c->apellido_materno;
 
                 // MAYUSCULAS
                 $nombre=ucfirst($nombre);
@@ -98,27 +78,14 @@
                 // }
                 // CAMPOS PARA TELEFONO************************************
 
-                $codigo='';
-
                 foreach($empresas as $e){
                     if($e->id == $c->id_empresa){
                         $empresa = $e->nombre;
-                        $empresa=substr($empresa,1);
-                        $empresa = str_replace("}","",$empresa);
-                        if((strcmp(substr($empresa,-1),'"'))==0){
-                            $empresa=substr($empresa,1);
-                            $empresa = str_replace('"','',$empresa);
-                        }
                     }
                 }
 
                 // CAMPOS PARA TIPO************************************
-                $tipo=substr($c->tipo_cliente,1);
-                $tipo = str_replace("}","",$tipo);
-                if((strcmp(substr($tipo,-1),'"'))==0){
-                  $tipo=substr($tipo,1);
-                  $tipo = str_replace('"','',$tipo);
-                }
+                $tipo=$c->tipo_cliente;
                 // CAMPOS PARA TIPO************************************
 
                 $nombre_completo = $nombre.' '.$ap.' '.$am;
@@ -140,7 +107,11 @@
                 <td>{{ $empresa }}</td>
                 <td>{{ $tipo }}</td>
                 <td>
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
+                  <form action="{{URL('cliente/'. isset($cliente) ?: '')}}" method="POST">
+                  <a href="{{URL('cliente/'. $c->id.'/show')}}" class="btn btn-primary gradient"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                  </form>
+                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
 
                   <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 

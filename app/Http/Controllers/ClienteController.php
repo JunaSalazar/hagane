@@ -56,7 +56,7 @@ class ClienteController extends Controller
 
         $cliente->id_empresa = $request->empresa_cliente;
 
-        $cliente->password = 'ABCD';
+        $cliente->password = '$2y$10$YURo1qn4NaUcxOoTwza4ROUwjrZiDBGiNhAnbyGGtFCxv7/gtKs.G'; //ESTO ES 'asdfgh'
 
         $cliente->email = $request->correo_cliente;
 
@@ -79,7 +79,9 @@ class ClienteController extends Controller
      */
     public function show($id)
     {
-        //
+        $task = Cliente::findOrFail($id);
+
+        return view('empleado.cliente.datosCliente')->withTask($task);
     }
 
     /**

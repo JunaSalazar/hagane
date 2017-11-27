@@ -87,7 +87,9 @@ class AvanceController extends Controller
      */
     public function show($id)
     {
-        //
+        $task = Avance::findOrFail($id);
+
+        return view('empleado.avance.datosAvance')->withTask($task);
     }
 
     /**

@@ -30,33 +30,13 @@
 
         @foreach($relacion as $r)
         <?php
-                  $nombre=substr($r->nombre,1);
-                  $nombre = str_replace("}","",$nombre);
-                  if((strcmp(substr($nombre,-1),'"'))==0){
-                  $nombre=substr($nombre,1);
-                  $nombre = str_replace('"','',$nombre);
-                  }
+                  $nombre=$r->nombre;
                   
-                  $a_paterno=substr($r->apellido_paterno,1);
-                  $a_paterno = str_replace("}","",$a_paterno);
-                  if((strcmp(substr($a_paterno,-1),'"'))==0){
-                  $a_paterno=substr($a_paterno,1);
-                  $a_paterno = str_replace('"','',$a_paterno);
-                  }
+                  $a_paterno=$r->apellido_paterno;
 
-                  $a_materno=substr($r->apellido_materno,1);
-                  $a_materno = str_replace("}","",$a_materno);
-                  if((strcmp(substr($a_materno,-1),'"'))==0){
-                  $a_materno=substr($a_materno,1);
-                  $a_materno = str_replace('"','',$a_materno);
-                  }
+                  $a_materno=$r->apellido_materno;
 
-                  $nombre_proyecto=substr($r->nombre_proyecto,1);
-                  $nombre_proyecto = str_replace("}","",$nombre_proyecto);
-                  if((strcmp(substr($nombre_proyecto,-1),'"'))==0){
-                  $nombre_proyecto=substr($nombre_proyecto,1);
-                  $nombre_proyecto = str_replace('"','',$nombre_proyecto);
-                  }
+                  $nombre_proyecto=$r->nombre_proyecto;
 
                   $nombre_cliente = $nombre.' '.$a_paterno.' '.$a_materno;
                 ?>

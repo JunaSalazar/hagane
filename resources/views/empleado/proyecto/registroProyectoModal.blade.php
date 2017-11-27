@@ -59,7 +59,7 @@
                 <div class="form-group">
                   <div class="controls">
                     <div class="form-group" style="width: 170px;" >
-                      <label for="recipient-name" class="form-control-label">Fecha de finalización:</label>
+                      <label for="recipient-name" class="form-control-label">Feha de entrega aproximada:</label>
                       <input id="mi_calendario2" type="text" class="mi_calendario form-control" name="fechaFinal" required />
                       <label for="mi_calendario2" class="input-group-addon generic_btn"><i class="fa fa-calendar" aria-hidden="true"></i></label>
                     </div>

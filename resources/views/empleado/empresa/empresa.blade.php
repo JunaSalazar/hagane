@@ -102,9 +102,11 @@
                 <td>{{ $direccion }}</td>
                 <td>{{ $rfc }}</td>
                 <td>
+                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
                   <form action="{{URL('empresa/'. isset($empresa) ?: '')}}" method="POST">
                   <a href="{{URL('empresa/'. $e->id.'/show')}}" class="btn btn-primary gradient"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
                   </form>
+                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
                   {{-- <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button> --}}
 
 

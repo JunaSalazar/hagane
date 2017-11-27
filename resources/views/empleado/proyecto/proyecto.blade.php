@@ -95,12 +95,7 @@
           @foreach($proyectos as $p)
           <tr>
                 <?php 
-                $nombre=substr($p->nombre,1);
-                $nombre = str_replace("}","",$nombre);
-                if((strcmp(substr($nombre,-1),'"'))==0){
-                  $nombre=substr($nombre,1);
-                  $nombre = str_replace('"','',$nombre);
-                }
+                $nombre=$p->nombre;
 
                 $fecha_inicial_db = $p->fechainicio;
 
@@ -151,7 +146,11 @@
                 <td>{{ $duracion }}</td>
                 <td>{{ $estatus }}</td>
                 <td>
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
+                  <form action="{{URL('proyecto/'. isset($proyecto) ?: '')}}" method="POST">
+                  <a href="{{URL('proyecto/'. $p->id.'/show')}}" class="btn btn-primary gradient"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                  </form>
+                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
 
                   <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 

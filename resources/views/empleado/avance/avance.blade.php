@@ -15,12 +15,7 @@
                     <option value = ''></option>
                   @foreach($proyectos as $key => $value)
                   <?php 
-                  $nombre=substr($value,1);
-                  $nombre = str_replace("}","",$nombre);
-                  if((strcmp(substr($nombre,-1),'"'))==0){
-                  $nombre=substr($nombre,1);
-                  $nombre = str_replace('"','',$nombre);
-                  }
+                  $nombre=$value;
                   
                   $id = $key;
                   
@@ -50,10 +45,6 @@
                     success:function(data) {
                         $('select[name="id_modulo"]').empty();
                         $.each(data, function(key, value) {
-                          value = value.replace('{','');
-                          value = value.replace('"','');
-                          value = value.replace('"','');
-                          value = value.replace('}','');
                             $('select[name="id_modulo"]').append('<option value="'+ key +'">'+ value +'</option>');
                         });
                         elem = key;
@@ -69,64 +60,6 @@
     @endslot
     @endcomponent
     <!-- Termina Modal button (AGREGAR MODULOS A PROYECTOS)-->
-
-<!-- MODAL PRUEBA VER IMÁGEN
-**************************************************************************************************************************************************-->
-
-
-
-
-
-
-<!-- Empieza Modal button (AGREGAR MODULOS A PROYECTOS)-->
-<div class="modal fade" id="pruebaModulo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">AVANCE</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <!--<span aria-hidden="true">&times;</span>-->
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-
-            <div class="half left cf">
-              <img src="/img/iconoImagen.png" style="width:250px; height:250px;">
-            </div>
-            <div class="half right cf">
-                <p for="recipient-name" class="form-control-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et ipsum eros. Sed metus purus, lacinia ut ex et, cursus interdum risus. Curabitur non congue augue. In feugiat fermentum lacus, eget condimentum nisl sodales interdum. Fusce nisi augue, aliquam accumsan massa sed, tempor rhoncus augue. Sed urna sapien, vulputate vel ligula a, venenatis posuere nulla. In pellentesque eros sed turpis venenatis, id tincidunt sem efficitur.</p>
-            </div>
-
-              <!-- Caja de comentarios
-
-              <div class="form-group">
-                <label for="message-text" class="form-control-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-              -->
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
-            <button type="submit" class="btn btn-success gradient">Guardar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script type="text/javascript">
-        $('#altaUsuario').on('show.bs.modal', function (event) {
-          var button = $(event.relatedTarget) // Button that triggered the modal
-          var recipient = button.data('whatever') // Extract info from data-* attributes
-          // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          var modal = $(this)
-          modal.find('.modal-title').text('New message to ' + recipient)
-          modal.find('.modal-body input').val(recipient)
-      })
-
-    </script>
 
 
 <!-- **************************************************************************************************************************************FIN MODAL PRUEBA VER IMAGEN Y COMENTARIO -->
@@ -159,7 +92,7 @@
             $relacion = DB::table('documentacion')
             ->join('proyecto', 'proyecto.id', '=', 'documentacion.id_proyecto')
             ->join('modulo', 'modulo.id', '=', 'documentacion.id_modulo')
-            ->select('proyecto.id','proyecto.nombre as nombre_proyecto','modulo.nombre as nombre_modulo','documentacion.nombre as nombre_avance','documentacion.imagen as imagen_avance','documentacion.comentario as comentario_avance')
+            ->select('proyecto.id','proyecto.nombre as nombre_proyecto','modulo.nombre as nombre_modulo','documentacion.nombre as nombre_avance','documentacion.imagen as imagen_avance','documentacion.comentario as comentario_avance','documentacion.id as avanceId')
             ->orderBy('id', 'asc')
             ->get();
           ?>
@@ -169,33 +102,13 @@
 
 
         <?php
-                  $nombre_proyecto=substr($r->nombre_proyecto,1);
-                  $nombre_proyecto = str_replace("}","",$nombre_proyecto);
-                  if((strcmp(substr($nombre_proyecto,-1),'"'))==0){
-                  $nombre_proyecto=substr($nombre_proyecto,1);
-                  $nombre_proyecto = str_replace('"','',$nombre_proyecto);
-                  }
+                  $nombre_proyecto=$r->nombre_proyecto;
                   
-                  $nombre_modulo=substr($r->nombre_modulo,1);
-                  $nombre_modulo = str_replace("}","",$nombre_modulo);
-                  if((strcmp(substr($nombre_modulo,-1),'"'))==0){
-                  $nombre_modulo=substr($nombre_modulo,1);
-                  $nombre_modulo = str_replace('"','',$nombre_modulo);
-                  }
+                  $nombre_modulo=$r->nombre_modulo;
 
-                  $nombre_avance=substr($r->nombre_avance,1);
-                  $nombre_avance = str_replace("}","",$nombre_avance);
-                  if((strcmp(substr($nombre_avance,-1),'"'))==0){
-                  $nombre_avance=substr($nombre_avance,1);
-                  $nombre_avance = str_replace('"','',$nombre_avance);
-                  }
+                  $nombre_avance=$r->nombre_avance;
 
-                  $imagen_avance=substr($r->imagen_avance,1);
-                  $imagen_avance = str_replace("}","",$imagen_avance);
-                  if((strcmp(substr($imagen_avance,-1),'"'))==0){
-                  $imagen_avance=substr($imagen_avance,1);
-                  $imagen_avance = str_replace('"','',$imagen_avance);
-                  }
+                  $imagen_avance=$r->imagen_avance;
 
                 ?>
         <tr>
@@ -211,7 +124,11 @@
             
             @else
 
-            <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
+            {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
+                  <form action="{{URL('avance/'. isset($avance) ?: '')}}" method="POST">
+                  <a href="{{URL('avance/'. $r->avanceId.'/show')}}" class="btn btn-primary gradient"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></a>
+                  </form>
+                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
 
             <button type="button" class="btn btn-primary gradient" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
 
