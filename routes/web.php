@@ -16,28 +16,43 @@
 // BUENO*************************************************************************
 // BUENO*************************************************************************
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-// BUENO*************************************************************************
-// BUENO*************************************************************************
-// BUENO*************************************************************************
-Route::get('/login', function () {
-    return view('/auth/login');
-});
-
-Route::get('/register', function () {
-    return view('/auth/register');
-});
-
-Auth::routes();
 
 // Route::post('/login', 'Auth\LoginController@loginNameOrEmail');
 
-Route::get('/empleado', 'HomeEmployeeController@index');
+Auth::routes();
+
+Route::get('/empleado', 'EmployeeController@index');
+
+Route::get('/home', 'HomeController@index');
+
+// Route::get('/empleado/login','Auth\EmployeeLoginController@showLoginForm')->name('empleado.login');
+// Route::post('/empleado/login','Auth\EmployeeLoginController@login')->name('empleado.login.submit');
+// Route::get('/empleado/','EmployeeController@index')->name('empleado.home');
+
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/empleado', 'HomeController@index')->name('home');
+
+// BUENO*************************************************************************
+// BUENO*************************************************************************
+// BUENO*************************************************************************
+// Route::get('/login', function () {
+//     return view('/auth/login');
+// });
+
+// Route::get('/register', function () {
+//     return view('/auth/register');
+// });
+
+// Auth::routes();
 
 
+
+// Route::get('/empleado', 'HomeEmployeeController@index');
+
+// <----------------------------------------------------------------------------------->
+// <----------------------------------------------------------------------------------->
 // ********************************************************************
 // ************************RUTAS DE PROYECTO***************************
 // ********************************************************************
@@ -91,6 +106,7 @@ Route::get('/proyecto_cliente', 'ProyectoClienteController@index');
 // ********************************************************************
 // ************************RUTAS DE AVANCE*****************************
 // ********************************************************************
+
 Route::get('/avance',array('as'=>'avance','uses'=>'AvanceController@index'));
 
 Route::get('/avance/ajax/{id}',array('as'=>'avance.ajax','uses'=>'AvanceController@myformAjax'));
@@ -99,15 +115,44 @@ Route::post('/avance/store', 'AvanceController@store');
 
 Route::get('/avance/{id}/show', 'AvanceController@show');
 
+
 // ********************************************************************
 // ************************RUTAS DE AVANCE*****************************
 // ********************************************************************
 // <----------------------------------------------------------------------------------->
 // <----------------------------------------------------------------------------------->
+// ********************************************************************
+// ************************RUTAS DE HISTORIAL**************************
+// ********************************************************************
 
 Route::get('/historial', 'HistorialController@index');
 
 Route::post('/historial/store', 'HistorialController@store');
+
+Route::get('/historial/{id}/show', 'HistorialController@show');
+
+// ********************************************************************
+// ************************RUTAS DE HISTORIAL**************************
+// ********************************************************************
+// <----------------------------------------------------------------------------------->
+// <----------------------------------------------------------------------------------->
+
+// <----------------------------------------------------------------------------------->
+// <----------------------------------------------------------------------------------->
+// ********************************************************************
+// ************************RUTAS DE PROGRESO**************************
+// ********************************************************************
+
+
+Route::get('/progreso', 'ProgresoController@index');
+
+Route::get('/progreso/{id}/show', 'ProgresoController@show');
+
+// ********************************************************************
+// ************************RUTAS DE PROGRESO**************************
+// ********************************************************************
+// <----------------------------------------------------------------------------------->
+// <----------------------------------------------------------------------------------->
 
 Route::get('/recordatorio', function () {
     return view('/empleado/recordatorio/recordatorio');
@@ -120,11 +165,4 @@ Route::get('/time', function () {
 });
 
 
-Route::get('/progreso', function () {
-    return view('/empleado/progreso/progreso');
-});
-
 // *********************POR PARTE DEL EMPLEADO******************************************
-
-
-

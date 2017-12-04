@@ -13,9 +13,9 @@ class CreateOcupasTable extends Migration
      */
     public function up()
     {
-        Schema::create('ocupas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('ocupa', function (Blueprint $table) {
+            $table->integer('id_empleado');
+            $table->integer('id_modulo');
         });
     }
 
@@ -26,6 +26,6 @@ class CreateOcupasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ocupas');
+        Schema::dropIfExists('ocupa');
     }
 }

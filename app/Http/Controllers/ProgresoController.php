@@ -2,21 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Proyecto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
-class HomeEmployeeController extends Controller
+class ProgresoController extends Controller
 {
-
-
-    public function _construct(){
-        $this->middleware('auth:employee');
-    }
-
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = \Hash::make($password);
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +16,9 @@ class HomeEmployeeController extends Controller
      */
     public function index()
     {
-        return view('/empleado/home');
+        $proyectos = DB::table('proyecto')->get();
+        
+        return view('/empleado/progreso/progreso',compact('proyectos'));
     }
 
     /**
@@ -56,7 +50,9 @@ class HomeEmployeeController extends Controller
      */
     public function show($id)
     {
-        //
+        $task = Proyecto::findOrFail($id);
+
+        return view('empleado.progreso.datosProgreso')->withTask($task);
     }
 
     /**

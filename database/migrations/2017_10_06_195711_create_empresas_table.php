@@ -13,9 +13,18 @@ class CreateEmpresasTable extends Migration
      */
     public function up()
     {
-        Schema::create('empresas', function (Blueprint $table) {
+        Schema::create('empresa', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('nombre');
+            $table->string('razon_social');
+            $table->string('rfc');
+            $table->string('calle');
+            $table->string('numero');
+            $table->string('colonia');
+            $table->string('codigo_postal');
+            $table->string('estado');
+            $table->string('ciudad');
+            $table->string('pais');
         });
     }
 
@@ -26,6 +35,6 @@ class CreateEmpresasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('empresa');
     }
 }

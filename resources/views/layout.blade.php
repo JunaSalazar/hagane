@@ -14,9 +14,12 @@
     <link rel="stylesheet" href="{{ URL::asset('css/separacionIzqDere.css') }}">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-
+    
     <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
+
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    
     <script src="{{ URL::asset('js/script.min.js') }}"></script>
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">  
@@ -35,6 +38,7 @@
     <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
+
     <!-- Termina Date Picker -->
 
     <!-- Empieza fullCalendar -->
@@ -45,46 +49,9 @@
 
 
 
-
-
-
-<style>
-h2{
-  font-size: 25px;
-}
-
-#calendario {
-  margin: 40px 10px;
-    padding: 0;
-    font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-    font-size: 14px;
-}
-
-#calendar {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-#progresoModulo{
-    width: 80px;
-}
-
-#calleEmpresa{
-    width: 80%;
-}
-
-#numeroEmpresa{
-    width: 50%;
-}
-
-div.scroll {
-    width: auto ;
-    height: 250px;
-    overflow: scroll;
-    overflow-x: hidden; /*La barra horizontal está oculto.*/
-    overflow-y: show;   /*Solo se muestra la barra de navegación vertical.*/
-}
-</style>
+    <style>
+    @yield('estilo')
+    </style>
 </head>
 
 <body> 
@@ -168,6 +135,36 @@ div.scroll {
       </div>
       {{-- ************************************************************* --}}
 
-    
+    <script>
+            var modal = document.getElementById('myModal');
+
+// Get the images
+var img1 = document.getElementById('myImg1');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+//handle click for myImg1
+img1.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+//handle click for myImg2
+img2.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+}
+
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+            </script>
 </body>
 </html>

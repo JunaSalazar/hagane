@@ -13,9 +13,12 @@ class CreateHistorialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('historials', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::create('contacta', function (Blueprint $table) {
+            $table->integer('id_cliente');
+            $table->integer('id_empleado');
+            $table->date('fecha');
+            $table->time('hora');
+            $table->text('comentario');
         });
     }
 
@@ -26,6 +29,6 @@ class CreateHistorialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('historials');
+        Schema::dropIfExists('contacta');
     }
 }

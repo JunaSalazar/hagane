@@ -61,7 +61,7 @@ class AvanceController extends Controller
            // image upload in public/upload folder.
         $file->move(public_path('storage'), $file->getClientOriginalName()); 
 
-        $avance->imagen = '{'.$file->getClientOriginalName().'}';
+        $avance->imagen = $file->getClientOriginalName();
         }
 
         $avance->comentario = $request->comentario_avance;

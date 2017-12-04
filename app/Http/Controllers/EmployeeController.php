@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// namespace App\Http\Controllers\Auth;
 use Illuminate\Http\Request;
+// use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -13,16 +14,15 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:web');
+        $this->middleware('auth:employee');
     }
-
     /**
-     * Show the application dashboard.
+     * show dashboard.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('home');
+        return view('empleado.home');
     }
 }

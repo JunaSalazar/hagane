@@ -73,7 +73,9 @@ class HistorialController extends Controller
      */
     public function show($id)
     {
-        //
+        $task = Historial::findOrFail($id);
+
+        return view('empleado.historial.datosHistorial')->withTask($task);
     }
 
     /**

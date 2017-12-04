@@ -13,9 +13,12 @@ class CreateModulosTable extends Migration
      */
     public function up()
     {
-        Schema::create('modulos', function (Blueprint $table) {
+        Schema::create('modulo', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('id_proyecto');
+            $table->string('nombre');
+            $table->integer('progreso');
+            $table->string('clasificacion');
         });
     }
 
@@ -26,6 +29,6 @@ class CreateModulosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('modulos');
+        Schema::dropIfExists('modulo');
     }
 }
