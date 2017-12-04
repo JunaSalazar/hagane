@@ -55,6 +55,26 @@ class HistorialController extends Controller
 
         $historial->fecha = $request->fecha_contacto;
 
+        $hora = $request->hora_historial;
+
+        $minuto = $request->minuto_historial;
+
+        $tiempo = $request->tiempo_historial;
+
+        if($tiempo == "pm"){
+            if($hora > 12){
+                $hora += 12;
+            }
+            
+        }
+        if($tiempo == "am"){
+            if($hora == "12"){
+                $hora = 00;
+            }
+        }
+
+        $historial->hora = $hora.':'.$minuto.':'.'00';
+
         $historial->comentario = $request->comentario_contacto;
 
         $historial->save();

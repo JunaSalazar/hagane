@@ -40,7 +40,7 @@
             <tr>
                 <th>Fecha</th>
                 <th>Hora</th>
-                <th>Cliente</th>
+                <th>Cliente que se contactó</th>
                 <th>Comentario</th>
                 <th></th>
             </tr>
@@ -49,7 +49,7 @@
             <tr>
                 <th>Fecha</th>
                 <th>Hora</th>
-                <th>Cliente</th>
+                <th>Cliente que se contactó</th>
                 <th>Comentario</th>
                 <th></th>
             </tr>
@@ -82,13 +82,35 @@
             // **************************************************************************************************************
             // ****************SE ACOMODA LA FECHA PARA DESPLEGARLA EN NUESTRO FORMATO************************************
             // **************************************************************************************************************
-                $hora=$c->hora;
+                $hora_base=$c->hora;
 
+                $hora=substr($hora_base, 0, 2);
+
+                $minuto=substr($hora_base, 3, 2);
+
+                if($hora >= 12){
+                    if($hora > 12){
+                       $hora -= 12; 
+                    }
+                    
+                    $tiempo_dia = 'pm';
+                }        
+                else{
+                    $tiempo_dia = 'am';
+                }
+
+                if($hora == '00'){
+                    $hora = 12;
+                    $tiempo_dia = 'am';
+                }
+
+                $hora_contacto = $hora.':'.$minuto.' '.$tiempo_dia;
+                
                 $cliente=$c->nombre;
 
                 ?>
                 <td>{{ $fecha_despliegue }}</td>
-                <td>{{ $hora }}</td>
+                <td>{{ $hora_contacto }}</td>
                 <td>{{ $cliente }}</td>
                 <td>{{ $c->comentario }}</td>
 

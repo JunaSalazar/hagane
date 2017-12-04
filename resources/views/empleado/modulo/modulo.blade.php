@@ -153,12 +153,9 @@
             @foreach($modulos as $m)
           <tr>
                 <?php 
-                $nombre=substr($m->nombre,1);
-                $nombre = str_replace("}","",$nombre);
-                if((strcmp(substr($nombre,-1),'"'))==0){
-                  $nombre=substr($nombre,1);
-                  $nombre = str_replace('"','',$nombre);
-                }
+                
+                $nombre=$m->nombre;
+
                 ?>
                 <td>{{ $nombre }}</td>
                 <td>

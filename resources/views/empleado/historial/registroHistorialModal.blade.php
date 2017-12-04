@@ -43,14 +43,14 @@
 
             <div class="half left cf">
               <label for="recipient-name" class="form-control-label">Fecha</label>
-              <input id="mi_calendario" type="text" class="mi_calendario form-control" name="fecha_contacto" />
+              <input id="mi_calendario" type="text" class="mi_calendario form-control" name="fecha_contacto" required />
               <label for="mi_calendario" class="input-group-addon generic_btn"><i class="fa fa-calendar" aria-hidden="true"></i></label>
             </div>
             <div class="half right cf">
               <label for="recipient-name" class="form-control-label">Hora</label>
               <div class="form-inline">
               <div class="form-group">
-              <select class="form-control" id="hora_historial" name="hora_historial">
+              <select class="form-control" id="hora_historial" name="hora_historial" required>
                 <option value = '01'>01</option>
                 <option value = '02'>02</option>
                 <option value = '03'>03</option>
@@ -65,7 +65,7 @@
                 <option value = '12'>12</option>
               </select> 
               :
-              <select class="form-control" id="minuto_historial" name="minuto_historial">
+              <select class="form-control" id="minuto_historial" name="minuto_historial" required>
                 <option value = '00'>00</option>
                 <option value = '05'>05</option>
                 <option value = '10'>10</option>
@@ -79,7 +79,7 @@
                 <option value = '50'>50</option>
                 <option value = '55'>55</option>
               </select>
-              <select class="form-control" id="tiempo_historial" name="tiempo_historial">
+              <select class="form-control" id="tiempo_historial" name="tiempo_historial" required>
                 <option value = 'am'>am</option>
                 <option value = 'pm'>pm</option>
               </select>
@@ -97,7 +97,7 @@
 
             <div class="form-group">
                 <label form="recipient-name" class="form-control-label">Comentario</label>
-                <textarea class="form-control" name="comentario_contacto" cols="40" rows="5"></textarea>
+                <textarea class="form-control" name="comentario_contacto" cols="40" rows="5" required></textarea>
             </div>
 
               <div class="modal-footer">
