@@ -12,44 +12,17 @@
 */
 
 // *********************POR PARTE DEL EMPLEADO******************************************
-// BUENO*************************************************************************
-// BUENO*************************************************************************
-// BUENO*************************************************************************
-
-
-
-
-// Route::post('/login', 'Auth\LoginController@loginNameOrEmail');
+Route::get('/registro', function () {
+    return view('/auth/register');
+});
 
 Auth::routes();
+
+Route::get('/logout','LoginController@userLogout');
 
 Route::get('/empleado', 'EmployeeController@index');
 
 Route::get('/home', 'HomeController@index');
-
-// Route::get('/empleado/login','Auth\EmployeeLoginController@showLoginForm')->name('empleado.login');
-// Route::post('/empleado/login','Auth\EmployeeLoginController@login')->name('empleado.login.submit');
-// Route::get('/empleado/','EmployeeController@index')->name('empleado.home');
-
-// Route::get('/home', 'HomeController@index')->name('home');
-// Route::get('/empleado', 'HomeController@index')->name('home');
-
-// BUENO*************************************************************************
-// BUENO*************************************************************************
-// BUENO*************************************************************************
-// Route::get('/login', function () {
-//     return view('/auth/login');
-// });
-
-// Route::get('/register', function () {
-//     return view('/auth/register');
-// });
-
-// Auth::routes();
-
-
-
-// Route::get('/empleado', 'HomeEmployeeController@index');
 
 // <----------------------------------------------------------------------------------->
 // <----------------------------------------------------------------------------------->
@@ -166,3 +139,83 @@ Route::get('/time', function () {
 
 
 // *********************POR PARTE DEL EMPLEADO******************************************
+
+//**********************POR PARTE DEL CLIENTE*******************************************
+
+Route::get('/cliente/avance', function () {
+    return view('/cliente/avance/avance');
+});
+
+Route::get('/cliente/avance/{id}/show', function ($id)
+    {
+        $task = Avance::findOrFail($id);
+
+        return view('cliente.avance.datosAvance')->withTask($task);
+});
+
+Route::get('/cliente/progreso', function () {
+    return view('/cliente/progreso/progreso');
+});
+
+Route::get('/cliente/progreso/{id}/show', function ($id)
+    {
+        $task = Proyecto::findOrFail($id);
+
+        return view('cliente.progreso.datosProgreso')->withTask($task);
+});
+
+
+//**********************POR PARTE DEL CLIENTE*******************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// BUENO*************************************************************************
+// BUENO*************************************************************************
+// BUENO*************************************************************************
+
+
+
+
+// Route::post('/login', 'Auth\LoginController@loginNameOrEmail');
+// Route::get('/empleado/login','Auth\EmployeeLoginController@showLoginForm')->name('empleado.login');
+// Route::post('/empleado/login','Auth\EmployeeLoginController@login')->name('empleado.login.submit');
+// Route::get('/empleado/','EmployeeController@index')->name('empleado.home');
+
+// Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/empleado', 'HomeController@index')->name('home');
+
+// BUENO*************************************************************************
+// BUENO*************************************************************************
+// BUENO*************************************************************************
+// Route::get('/login', function () {
+//     return view('/auth/login');
+// });
+
+// Route::get('/register', function () {
+//     return view('/auth/register');
+// });
+
+// Auth::routes();
+
+
+
+// Route::get('/empleado', 'HomeEmployeeController@index');

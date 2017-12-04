@@ -23,24 +23,27 @@
 
           <div class="form-group">
             <label for="recipient-name" class="form-control-label">Nombre del proyecto</label>
-            <input type="text" class="form-control" id="usuarioCliente" maxlength="20" name="nombre_proyecto" required>
+            <input type="text" class="form-control" id="usuarioCliente" maxlength="60" name="nombre_proyecto" required>
           </div>
-          <fieldset id = "cotizado">
-          <p><b>¿Se ha cotizado?</b></p>
-            <div class="radio" name="cotizado">
-              <label><input type="radio" name="cotizado" value = "SI" required>SI</label>
+          <fieldset id = "estatus">
+          <p><b>Estatus</b></p>
+            <div class="radio" name="estatus">
+              <label><input type="radio" name="estatus" value = "Contacto inicial" required>Contacto inicial</label>
             </div>
-            <div class="radio" name="cotizado">
-              <label><input type="radio" name="cotizado" value = "NO">NO</label>
+            <div class="radio" name="estatus">
+              <label><input type="radio" name="estatus" value = "Negociación (cotizado)">Negociación (cotizado)</label>
             </div>
-          </fieldset>
-          <fieldset id = "entregado">
-          <p><b>¿Se ha entregado?</b></p>
-            <div class="radio" id="entregado">
-              <label><input type="radio" name="entregado" value = "SI" required>SI</label>
+            <div class="radio" name="estatus">
+              <label><input type="radio" name="estatus" value = "Aceptado (en desarrollo)">Aceptado (en desarrollo)</label>
             </div>
-            <div class="radio">
-              <label><input type="radio" name="entregado" value = "NO">NO</label>
+            <div class="radio" name="estatus">
+              <label><input type="radio" name="estatus" value = "Rechazado">Rechazado</label>
+            </div>
+            <div class="radio" name="estatus">
+              <label><input type="radio" name="estatus" value = "Pausado">Pausado</label>
+            </div>
+            <div class="radio" name="estatus">
+              <label><input type="radio" name="estatus" value = "Finalizado">Finalizado</label>
             </div>
           </fieldset>
             <div class="row">

@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layout_cliente')
 
 @section('content')
 
@@ -104,6 +104,8 @@
 
       </style>
 
+
+{{-- MODAL DE MUESTREO DE IMAGEN EN GRANDE --}}
       <div class="modal fade" id="modalImagen" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialogImage modal-lg" role="document">
         <div class="modal-contentImage">
@@ -119,7 +121,7 @@
         </div>
       </div>
     </div>
-
+{{-- MODAL DE MUESTREO DE IMAGEN EN GRANDE --}}
 
 
 
@@ -142,10 +144,6 @@
             </tr>
           </thead>
         <tbody>
-          <tr>
-            <th scope="row">ID</th>
-            <td>{{ $task->id }}</td>
-          </tr>
           <tr>
             <th scope="row">Nombre</th>
             <td>{{ $task->nombre }}</td>

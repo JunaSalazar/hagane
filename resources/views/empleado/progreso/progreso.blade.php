@@ -62,11 +62,12 @@
                 <td>{{ $nombre }}</td>
                 <td>{{ $fecha_inicio }}</td>
                 <td>{{ $fecha_final }}</td>
-                <td>{{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
+                <td>
+                {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
                   <form action="{{URL('progreso/'. isset($progreso) ?: '')}}" method="POST">
                   <a href="{{URL('progreso/'. $p->id.'/show')}}" class="btn btn-primary gradient"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
                   </form>
-                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}</button>
+                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
                 </td>
                 <td>20%</td>
             </tr>

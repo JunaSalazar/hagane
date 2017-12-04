@@ -61,22 +61,8 @@
 
                 // CAMPOS PARA CORREO************************************
                 $correo=$c->email;
-                // $correo=substr($c->email,1);
-                // $correo = str_replace("}","",$correo);
-                // if((strcmp(substr($correo,-1),'"'))==0){
-                //   $correo=substr($correo,1);
-                //   $correo = str_replace('"','',$correo);
-                // }
                 // CAMPOS PARA CORREO************************************
 
-                // CAMPOS PARA TELEFONO************************************
-                // $telefono=substr($c->telefono,1);
-                // $telefono = str_replace("}","",$telefono);
-                // if((strcmp(substr($telefono,-1),'"'))==0){
-                //   $telefono=substr($telefono,1);
-                //   $telefono = str_replace('"','',$telefono);
-                // }
-                // CAMPOS PARA TELEFONO************************************
 
                 foreach($empresas as $e){
                     if($e->id == $c->id_empresa){
@@ -88,7 +74,8 @@
                 $tipo=$c->tipo_cliente;
                 // CAMPOS PARA TIPO************************************
 
-                $nombre_completo = $nombre.' '.$ap.' '.$am;
+
+                //***********************CAMPOS PARA TELEFONO****************************
 
                 $telefono_raw = $c->telefono;
 
@@ -99,6 +86,8 @@
                 $tercera_parte = substr($telefono_raw, 7, 4);
 
                 $telefono = $primera_parte.'-'.$segunda_parte.'-'.$tercera_parte;
+
+                //***********************CAMPOS PARA TELEFONO****************************
 
                 ?>
                 <td>{{ $nombre_completo }}</td>

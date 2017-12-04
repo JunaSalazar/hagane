@@ -62,10 +62,10 @@ class HistorialController extends Controller
         $tiempo = $request->tiempo_historial;
 
         if($tiempo == "pm"){
-            if($hora > 12){
                 $hora += 12;
-            }
-            
+                if($hora>=24){
+                    $hora = 00;
+                }
         }
         if($tiempo == "am"){
             if($hora == "12"){

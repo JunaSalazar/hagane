@@ -60,7 +60,7 @@
             $relacion = DB::table('cliente')
             ->join('contacta', 'cliente.id', '=', 'contacta.id_cliente')
             ->select('cliente.*','contacta.*')
-            ->orderBy('cliente.id', 'asc')
+            ->orderBy('contacta.fecha', 'desc')
             ->get();
           ?>
 

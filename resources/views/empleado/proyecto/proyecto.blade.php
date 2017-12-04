@@ -9,12 +9,19 @@
         @foreach($clientes as $c)
         <?php
         $nombre=$c->nombre;
-        
-        $a_paterno=$c->apellido_paterno;
 
-        $a_materno=$c->apellido_materno;
+        $ap=$c->apellido_paterno;
 
-        $nombre_completo=$nombre.' '.$a_paterno.' '.$a_materno;
+        $am=$c->apellido_materno;
+
+        // MAYUSCULAS
+        $nombre=ucfirst($nombre);
+
+        $ap=ucfirst($ap);
+
+        $am=ucfirst($am);
+
+        $nombre_completo = $nombre.' '.$ap.' '.$am;
 
         $id_cliente=$c->id;
         ?>

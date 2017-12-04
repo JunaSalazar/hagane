@@ -38,6 +38,7 @@
     <script src="{{ URL::asset('js/jquery.min.js') }}"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
+
     <!-- Termina Date Picker -->
 
     <!-- Empieza fullCalendar -->
@@ -64,35 +65,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="{{ url('empresa') }}"><img src="/img/logo.png" alt="" style="margin-right: 40px;"></a> 
+      <a href="{{ url('home') }}"><img src="/img/logo.png" alt="" style="margin-right: 40px;"></a> 
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class=""><a href="{{ url('empresa') }}">Empresas<span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="{{ url('cliente/progreso') }}">Progreso de mis proyectos<span class="sr-only">(current)</span></a></li>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Clientes</span><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url('cliente') }}">Ver clientes</a></li>
-            <li><a href="{{ url('proyecto_cliente') }}">Clientes y sus proyectos</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span>Proyectos</span><span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url('proyecto') }}">Ver proyectos</a></li>
-            <li><a href="{{ url('modulo') }}">Módulos</a></li>
-            <li><a href="{{ url('progreso') }}">Progreso de proyectos</a></li>
-            <li><a href="{{ url('avance') }}">Documentos de avances</a></li>
-          </ul>
-        </li>
-
-        <li class=""><a href="{{ url('historial') }}">Historial de contactos<span class="sr-only">(current)</span></a></li>
-
-        <li class=""><a href="{{ url('recordatorio') }}">Recordatorios<span class="sr-only">(current)</span></a></li>
+        <li class=""><a href="{{ url('cliente/avance') }}">Documentos de avances<span class="sr-only">(current)</span></a></li>
 
       </ul>
       
@@ -104,7 +85,6 @@
           <ul class="dropdown-menu">
             <li><a href="{{ url('home') }}">Perfil</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Cerrar sesión</a></li>
 {{-- EXTRAEXTRAEXTRAEXTRA --}}
             <li>
                                         <a href="{{ route('logout') }}"

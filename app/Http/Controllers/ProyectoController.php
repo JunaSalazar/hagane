@@ -37,22 +37,17 @@ class ProyectoController extends Controller
 
         /*Nombre de la tabla->atributo = $request->NOMBRE DEL CAMPO*/
 
-        $inicio = '{';
-        $final = '}';
-
         $proyecto->id_cliente = $request->cliente_proyecto;
 
 // ****************NOMBRE DEL PROYECTO********************
-        $proyecto->nombre = $inicio.$request->nombre_proyecto.$final;
+        $proyecto->nombre = $request->nombre_proyecto;
 // ****************NOMBRE DEL PROYECTO********************
         $proyecto->fechainicio = $request->fechaInicio;
         $proyecto->fechafinal = $request->fechaFinal;
-// ****************COTIZADO DEL PROYECTO********************
-        $proyecto->cotizado = $inicio . $request->cotizado . $final;
-// ****************COTIZADO DEL PROYECTO********************
+// ****************ESTATUS ACTUAL DEL PROYECTO********************
+        $proyecto->estatus = $request->estatus;
+// ****************ESTATUS ACTUAL DEL PROYECTO********************
 
-// ****************ENTREGADO DEL PROYECTO********************
-        $proyecto->entregado = $inicio.$request->entregado.$final;
 // ****************ENTREGADO DEL PROYECTO********************
 
         $proyecto->save();

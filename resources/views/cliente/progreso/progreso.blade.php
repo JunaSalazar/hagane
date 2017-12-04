@@ -1,164 +1,6 @@
-@extends('layout')
+@extends('layout_cliente')
 
 @section('content')
-
-      <!-- FIN DE SECCIÓN DE PERFIL -->
-
-    <!-- Empieza Modal button (Alta de cliente)-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">Progreso total del proyecto</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <!--<span aria-hidden="true">&times;</span>-->
-            </button>
-          </div>
-          <div class="modal-body">
-            <form>
-
-            <div class="form-group">
-                <label form="recipient-name" class="form-control-label">Progreso total</label>
-                <div class="progress">
-                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 20%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label form="recipient-name" class="form-control-label">Detalle por módulo</label>
-                <div class="scroll">
-              <table id="modulos" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <tbody>
-              <thead>
-              <tr>
-                <th>Nombre de módulo</th>
-                <th>Responsable del módulo</th>
-                <th>Nivel del módulo</th>
-                <th>Progreso del módulo</th>
-                <th></th>
-              </tr>
-              </thead>
-                  <tr>
-                    <td>MODULO 1</td>
-                    <td>Erick Castillo</td>
-                    <td>BAJO</td>
-                    <td>20%</td>
-                    <td>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>MODULO 2</td>
-                    <td>Juan Valdez</td>
-                    <td>BAJO</td>
-                    <td>70%</td>
-                    <td>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>MODULO 3</td>
-                    <td>Carlos Salazar</td>
-                    <td>ALTO</td>
-                   <td>99%</td>
-                   <td>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button></td>
-                 </tr>
-                 <tr>
-                    <td>MODULO 3</td>
-                    <td>Carlos Salazar</td>
-                    <td>ALTO</td>
-                   <td>99%</td>
-                   <td>
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                    </td>
-                 </tr>
-                 <tr>
-                    <td>MODULO 3</td>
-                    <td>Carlos Salazar</td>
-                    <td>ALTO</td>
-                   <td>99%</td>
-                   <td>
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                    </td>
-                 </tr>
-                 <tr>
-                    <td>MODULO 3</td>
-                    <td>Carlos Salazar</td>
-                    <td>ALTO</td>
-                   <td>99%</td>
-                   <td>
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                    </td>
-                 </tr>
-                 <tr>
-                    <td>MODULO 3</td>
-                    <td>Carlos Salazar</td>
-                    <td>ALTO</td>
-                   <td>99%</td>
-                   <td>
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                    </td>
-                 </tr>
-                 <tr>
-                    <td>MODULO 3</td>
-                    <td>Carlos Salazar</td>
-                    <td>ALTO</td>
-                   <td>99%</td>
-                   <td>
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class = "glyphicon glyphicon-info-sign" aria-hidden="true"></span></button>
-
-                    <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#infoModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
-                    </td>
-                 </tr>
-
-               </tbody>
-            </table>
-            </div>
-            </div>
-
-            
-
-              <!-- Caja de comentarios
-
-              <div class="form-group">
-                <label for="message-text" class="form-control-label">Message:</label>
-                <textarea class="form-control" id="message-text"></textarea>
-              </div>
-              -->
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger gradient" data-dismiss="modal">Cerrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    </script>
-
-
-    <!-- Termina Modal button (Alta de cliente)-->
-
-    <!-- -->
 
 <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
@@ -180,35 +22,56 @@
             </tr>
         </tfoot>
         <tbody>
+
+          <?php
+                $relacion = DB::table('proyecto')
+                ->join('modulo', 'proyecto.id', '=', 'modulo.id_proyecto')
+                ->select('proyecto.id as id', 'proyecto.nombre as nombre','proyecto.fechainicio','proyecto.fechafinal')
+                ->groupBy('proyecto.id')
+                ->orderBy('proyecto.id', 'asc')
+                ->get();
+                ?>
+
+          @foreach($relacion as $p)
+            <?php
+                $nombre=$p->nombre;
+
+                $fecha_inicial_db = $p->fechainicio;
+
+                $anio_inicial = substr($fecha_inicial_db, 0, 4);
+
+                $mes_inicial = substr($fecha_inicial_db, 5, 2);
+
+                $dia_inicial = substr($fecha_inicial_db, 8, 2);
+
+                $fecha_inicio = $dia_inicial.'/'.$mes_inicial.'/'.$anio_inicial;
+
+                $fecha_final_db = $p->fechafinal;
+
+                $anio_final = substr($fecha_final_db, 0, 4);
+
+                $mes_final = substr($fecha_final_db, 5, 2);
+
+                $dia_final = substr($fecha_final_db, 8, 2);
+
+                $fecha_final = $dia_final.'/'.$mes_final.'/'.$anio_final;
+
+            ?>
+
             <tr>
-                <td>Aplicación movil"Comiditas"</td>
-                <td>25/06/2017</td>
-                <td>28/09/2018</td>
-                <td><button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
+                <td>{{ $nombre }}</td>
+                <td>{{ $fecha_inicio }}</td>
+                <td>{{ $fecha_final }}</td>
+                <td>{{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}
+                  <form action="{{URL('progreso/'. isset($progreso) ?: '')}}" method="POST">
+                  <a href="{{URL('progreso/'. $p->id.'/show')}}" class="btn btn-primary gradient"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                  </form>
+                  {{-- *********************************BOTÓN DE MOSTRAR DATOS************************************* --}}</button>
                 </td>
                 <td>20%</td>
             </tr>
-            <tr>
-                <td>Automatización de jardín botánico</td>
-                <td>25/06/2018</td>
-                <td>28/09/2018</td>
-                <td>
 
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
-
-                  </td>
-                <td>0%</td>
-            </tr>
-            <tr>
-                <td>Desarrollo de aplicación móvil</td>
-                <td>25/06/2019</td>
-                <td>28/09/2020</td>
-                <td>
-                  <button type="button" class="btn btn-primary gradient"  data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="margin-bottom: 5px;"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></button>
-                </td>
-                <td>0%</td>
-            </tr>
-
+          @endforeach
         </tbody>
 </table>      
 
